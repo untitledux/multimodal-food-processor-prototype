@@ -1,5 +1,9 @@
 <script>
+  import { io } from "socket.io-client";
   let streaming = false;
+  const ENDPOINT = "http://0.0.0.0:3000"
+  
+  let socket = io(ENDPOINT);
 
   const stream = () => {
     if (streaming) {
