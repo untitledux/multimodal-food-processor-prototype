@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - '5000:5000'
+      - '35729:35729'
+    volumes:
+      - ./frontend/:/src/app
+    restart: always
+  node-server:
+    build:
+      context: ./server
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./server/:/src/app
+    restart: always

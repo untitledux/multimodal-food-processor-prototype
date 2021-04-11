@@ -14,7 +14,7 @@ const io = require('socket.io')(server, {
 const ss = require('socket.io-stream');
 
 const PORT = process.env.PORT;
-const HOST = '127.0.0.1';
+const HOST = '0.0.0.0';
 
 app.use(cors());
 
