@@ -1,7 +1,5 @@
 # cookit project
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
 _Note that you will need to have [Node.js](https://nodejs.org) installed. For production mode you also need docker and docker-compose installed and setup_
 
 ---
