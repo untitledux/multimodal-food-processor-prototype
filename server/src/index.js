@@ -16,6 +16,31 @@ const ss = require('socket.io-stream');
 const PORT = process.env.PORT;
 const HOST = '0.0.0.0';
 
+// MQTT
+const mqtt = require('mqtt')
+const mqtt_options = {
+  host: '3.88.213.87',
+  port: 12183,
+  protocol: 'mqtt'
+};
+
+var mqtt_client  = mqtt.connect(mqtt_options);
+
+/////// Subscription Test - topic: audioFrame
+mqtt_client.subscribe('hermes/audioServer/default/audioFrame', function (err) {
+  if (!err) {
+    console.log("subscribe success");
+  }
+})
+
+// When audioFrame is published  - you get message here
+mqtt_client.on('message', function (topic, message) {
+  // message is Buffer
+  console.log('topic: ' + topic.toString())
+  console.log('message: ' + message.toString())
+})
+/////// 
+
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -37,6 +62,7 @@ io.on('connection', (client) => {
     stream.pipe(fs.createWriteStream(filename));
 
     //TODO Pipe this stream to MQTT
+    // mqtt_client.publish('hermes/audioServer/default/audioFrame', stream);
   });
 });
 
