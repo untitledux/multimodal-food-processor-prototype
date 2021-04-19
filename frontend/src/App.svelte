@@ -12,6 +12,7 @@
   let recordAudio;
 
   const streamer = async () => {
+    console.log('STREAMING');
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     recordAudio = RecordRTC(stream, {
       type: 'audio',
