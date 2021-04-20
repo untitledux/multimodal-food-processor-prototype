@@ -20,7 +20,7 @@ const HOST = '0.0.0.0';
 // MQTT
 const mqtt = require('mqtt');
 const mqtt_options = {
-  host: '3.88.213.87',
+  host: 'localhost',
   port: 12183,
   protocol: 'mqtt',
 };
@@ -57,19 +57,15 @@ io.on('connection', (client) => {
 
   // when the client sends 'stream' events
   ss(client).on('stream', async (stream, data) => {
+    console.log('STREAM');
     // get the name of the stream
     const filename = path.basename(data.name);
     // pipe the filename to the stream
     stream.pipe(fs.createWriteStream(filename));
-    const readable = Readable.from(stream);
     //or do we need readable.on('data) here?
     stream.on('data', (chunk) => {
       console.log('chunk is in', chunk);
       mqtt_client.publish('hermes/audioServer/default/audioFrame', chunk);
-    });
-
-    readable.on('error', (err) => {
-      console.log('Stream error', err);
     });
 
     // function streamToString (stream) {
