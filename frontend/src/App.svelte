@@ -25,7 +25,7 @@
       // get intervals based blobs
       // value in milliseconds
       // as you might not want to make detect calls every seconds
-      timeSlice: 2000,
+      timeSlice: 50,
       ondataavailable: (blob) => {
         // making use of socket.io-stream for bi-directional
         // streaming, create a stream
