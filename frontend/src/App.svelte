@@ -16,7 +16,8 @@
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     recordAudio = RecordRTC(stream, {
       type: 'audio',
-      mimeType: 'audio/webm',
+      mimeType: 'audio/wav',
+      bufferSize: 16384,
       sampleRate: 44100, //should be the same then in the server code
       desiredSampRate: 16000,
       recorderType: RecordRTC.StereoAudioRecorder,
@@ -25,13 +26,14 @@
       // get intervals based blobs
       // value in milliseconds
       // as you might not want to make detect calls every seconds
-      timeSlice: 50,
+      timeSlice: 0,
       ondataavailable: (blob) => {
         // making use of socket.io-stream for bi-directional
         // streaming, create a stream
         let stream = ss.createStream();
         // stream directly to server
         // it will be temp. stored locally
+        console.log(blob);
         ss(socket).emit('stream', stream, {
           name: 'stream.wav',
           size: blob.size,

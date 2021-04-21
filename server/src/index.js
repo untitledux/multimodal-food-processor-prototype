@@ -7,6 +7,8 @@ const fs = require('fs');
 const http = require('http');
 const server = http.createServer(app);
 const { Readable } = require('stream');
+const wav = require('node-wav');
+
 const io = require('socket.io')(server, {
   cors: {
     origin: '*',
@@ -62,22 +64,17 @@ io.on('connection', (client) => {
     const filename = path.basename(data.name);
     // pipe the filename to the stream
     stream.pipe(fs.createWriteStream(filename));
-    //or do we need readable.on('data) here?
     stream.on('data', (chunk) => {
-      console.log('chunk is in', chunk);
+      console.log(chunk);
       mqtt_client.publish('hermes/audioServer/default/audioFrame', chunk);
     });
+    stream.on('end', () => {
+      console.log('END');
+    });
 
-    // function streamToString (stream) {
-    //   const chunks = [];
-    //   return new Promise((resolve, reject) => {
-    //     stream.on('data', (chunk) => chunks.push(Buffer.from(chunk)));
-    //     stream.on('error', (err) => reject(err));
-    //     stream.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
-    //   })
-    // }
-
-    // const result = await streamToString(stream)
+    stream.on('err', (err) => {
+      console.log(err);
+    });
   });
 });
 
