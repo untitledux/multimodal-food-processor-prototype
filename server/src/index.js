@@ -8,7 +8,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Readable } = require('stream');
 const wav = require('node-wav');
-
+let socketClient;
 const io = require('socket.io')(server, {
   cors: {
     origin: '*',
@@ -22,7 +22,7 @@ const HOST = '0.0.0.0';
 // MQTT
 const mqtt = require('mqtt');
 const mqtt_options = {
-  host: 'localhost',
+  host: 'rhasspy',
   port: 12183,
   protocol: 'mqtt',
 };
@@ -32,7 +32,16 @@ var mqtt_client = mqtt.connect(mqtt_options);
 /////// Subscription Test - topic: audioFrame
 mqtt_client.subscribe('hermes/audioServer/default/audioFrame', function (err) {
   if (!err) {
-    console.log('subscribe success');
+    console.log('subscribe to rhasspy MQTT success');
+    socketClient
+      ? client.emit('mqtt_setup', `MQTT subscription: successfull`)
+      : null;
+  } else {
+    console.log(err);
+    if (socketClient)
+      socketClient
+        ? client.emit('mqtt_setup', `MQTT subscription: ${err}`)
+        : null;
   }
 });
 
@@ -51,8 +60,10 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (client) => {
+  socketClient = client;
   console.log('client connected');
   client.on('disconnect', () => {
+    socketClient = null;
     console.log('client disconnected');
   });
   client.emit('server_setup', `Server connected [id=${client.id}]`);

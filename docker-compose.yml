@@ -17,3 +17,9 @@ services:
     volumes:
       - ./server/:/src/app
     restart: always
+    networks:
+      - rhasspy_network_external
+
+networks:
+  rhasspy_network_external:
+    external: true
