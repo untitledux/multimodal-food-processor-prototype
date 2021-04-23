@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import dotenv from "dotenv";
 import cors from 'cors';
 import express from 'express';
 const app = express();
@@ -9,6 +9,13 @@ const server = http.createServer(app);
 const { Readable } = require('stream');
 const wav = require('node-wav');
 
+dotenv.config({
+  path: path.resolve(
+    process.cwd(),
+    process.env.NODE_ENV == "prod" ? ".env" : ".env.dev"
+  )
+});
+
 const io = require('socket.io')(server, {
   cors: {
     origin: '*',
@@ -17,32 +24,49 @@ const io = require('socket.io')(server, {
 const ss = require('socket.io-stream');
 
 const PORT = process.env.PORT || 3000;
-const HOST = '0.0.0.0';
+const HOST = '127.0.0.1';
 
 // MQTT
 const mqtt = require('mqtt');
 const mqtt_options = {
-  host: 'localhost',
+  host: process.env.MQTTHOST,
   port: 12183,
   protocol: 'mqtt',
 };
 
-var mqtt_client = mqtt.connect(mqtt_options);
+let mqtt_client = mqtt.connect(mqtt_options);
 
-/////// Subscription Test - topic: audioFrame
-mqtt_client.subscribe('hermes/audioServer/default/audioFrame', function (err) {
+// Subscribe 'intent recognition'
+mqtt_client.subscribe('hermes/intent/#', function (err) {
   if (!err) {
     console.log('subscribe success');
   }
 });
 
-// When audioFrame is published  - you get message here
+// When subscribed topic is published  - you get message here
 mqtt_client.on('message', function (topic, message) {
   // message is Buffer
-  // console.log('topic: ' + topic.toString());
-  // console.log('message: ' + Buffer.from(message));
+
+  // get 'intent recognition' message
+  if(topic.indexOf('hermes/intent/') == 0){
+    console.log('topic: ' + topic);
+    console.log('message: ' + message);
+    
+    // sample code for intent json parsing
+    let intent_json = JSON.parse(message);
+    console.log('input: ' + intent_json.input);
+    console.log('intentName: ' + intent_json.intent.intentName);
+    if(intent_json.slots[0]==undefined){
+      console.log('this intention has no slots');
+    } else {
+      for (var i in intent_json.slots) {
+        console.log('entity: ' + intent_json.slots[i].entity);
+        console.log('value: ' + intent_json.slots[i].value.value);
+      }
+    }
+    
+  }
 });
-///////
 
 app.use(cors());
 
@@ -59,17 +83,18 @@ io.on('connection', (client) => {
 
   // when the client sends 'stream' events
   ss(client).on('stream', async (stream, data) => {
-    console.log('STREAM');
+    // console.log('STREAM');
     // get the name of the stream
     const filename = path.basename(data.name);
+
     // pipe the filename to the stream
     stream.pipe(fs.createWriteStream(filename));
     stream.on('data', (chunk) => {
-      console.log(chunk);
+      //console.log(chunk);
       mqtt_client.publish('hermes/audioServer/default/audioFrame', chunk);
     });
     stream.on('end', () => {
-      console.log('END');
+      // console.log('END');
     });
 
     stream.on('err', (err) => {
