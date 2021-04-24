@@ -83,7 +83,8 @@ mqtt_client.on('message', function (topic, message) {
 
     // send text to tts (sample code)
     let msg = 'hello world';
-    axios.post('http://3.88.213.87:12101/api/text-to-speech', msg).then(res => {
+    let host_path = 'http://' + process.env.MQTTHOST+':12101/api/text-to-speech';
+    axios.post(host_path, msg).then(res => {
       console.log(`statusCode: ${res.statusCode}`)
       //console.log(res)
     }).catch(error => {
