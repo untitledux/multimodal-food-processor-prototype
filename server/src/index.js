@@ -32,7 +32,7 @@ console.log(process.env.MQTTHOST);
 // MQTT
 const mqtt = require('mqtt');
 const mqtt_options = {
-  host: 'rhasspy',
+  host: MQTTHOST,
   port: RHASSPY_PORT,
   protocol: 'mqtt',
 };
@@ -54,26 +54,20 @@ mqtt_client.subscribe('hermes/intent/#', function (err) {
   }
 });
 
-mqtt_client.subscribe('hermes/nlu/intentNotRecognized', function (err) {
-  if (!err) {
-    console.log('subscribe success hermes intentNotRecognized');
-  } else {
-    console.log(err);
-  }
-});
+// mqtt_client.subscribe('hermes/nlu/intentNotRecognized', function (err) {
+//   if (!err) {
+//     console.log('subscribe success hermes intentNotRecognized');
+//   } else {
+//     console.log(err);
+//   }
+// });
 
 // Subscribe 'get audio buffer from tts'
 mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', function (err) {
   if (!err) {
-    console.log(`subscribe to MQTT Host: ${MQTTHOST}`);
-    sessionid
-      ? io.to(sessionid).emit('mqtt_setup', `MQTT subscription: successfull`)
-      : null;
+    console.log(`subscribe to MQTT Audio Buffer Get`);
   } else {
     console.log(err);
-    sessionid
-      ? io.to(sessionid).emit('mqtt_setup', `MQTT subscription: ${err}`)
-      : null;
   }
 });
 
@@ -81,14 +75,14 @@ mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', function (err) {
 mqtt_client.on('message', function (topic, message) {
   // get 'intent recognition' message
   console.log('topic: ' + topic);
-  // console.log('message: ' + message);
   if (topic.indexOf('hermes/intent/') === 0) {
     processIntent(message);
   } else if (topic.indexOf('hermes/nlu/intentNotRecognized')) {
-    io.to(sessionid).emit('intentNotRecognized', message);
-  } else if (topic.indexOf('hermes/audioServer/default/playBytes/') === 0) {
+    // io.to(sessionid).emit('intentNotRecognized', message);
+  } else if (topic.indexOf('hermes/audioServer/default/playBytes/') == 0) {
     // get audio buffer from tts
-    console.log('topic: ' + topic);
+    console.log('GET AUDIO BUFFER');
+
     fs.writeFile('result.wav', message, function (err) {
       if (!err) {
         console.log('audio write success');
@@ -130,18 +124,18 @@ io.on('connection', (client) => {
 
 // send text to tts (sample code)
 const sendTTS = () => {
-  let msg = 'hello world';
+  let msg = 'hey';
   const host_path =
     'http://' + process.env.MQTTHOST + ':12101/api/text-to-speech';
 
   axios
     .post(host_path, msg)
     .then((res) => {
-      console.log(`statusCode: ${res.statusCode}`);
-      console.log(res);
+      console.log(`SEND TEXT statusCode: ${res.statusCode}`);
+      // console.log(res);
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
     });
 };
 
@@ -163,6 +157,7 @@ const processIntent = (message) => {
       console.log('value: ' + intentJSON.slots[i].value.value);
     }
   }
+  sendTTS();
 };
 
 server.listen(PORT, HOST, () =>

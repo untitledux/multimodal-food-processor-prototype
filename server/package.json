@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-docker": "NODE_ENV=docker nodemon --exec babel-node src/index.js",
-    "start": "nodemon --exec babel-node src/index.js",
+    "start": "NODE_ENV=prod nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
