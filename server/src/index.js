@@ -8,6 +8,7 @@ const http = require('http');
 const server = http.createServer(app);
 const { Readable } = require('stream');
 const wav = require('node-wav');
+const axios = require('axios');
 
 let sessionid;
 
@@ -45,12 +46,19 @@ mqtt_client.subscribe('hermes/intent/#', function (err) {
   }
 });
 
+// Subscribe 'get audio buffer from tts'
+mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', function (err) {
+  if (!err) {
+    console.log('subscribe success');
+  }
+});
+
 // When subscribed topic is published  - you get message here
 mqtt_client.on('message', function (topic, message) {
   // message is Buffer
 
-  // get 'intent recognition' message
-  if(topic.indexOf('hermes/intent/') == 0){    
+  if(topic.indexOf('hermes/intent/') == 0){ 
+    // get 'intent recognition' message   
     console.log('topic: ' + topic);
     console.log('message: ' + message);
     
@@ -72,7 +80,26 @@ mqtt_client.on('message', function (topic, message) {
         console.log('value: ' + intent_json.slots[i].value.value);
       }
     }
+
+    // send text to tts (sample code)
+    let msg = 'hello world';
+    axios.post('http://3.88.213.87:12101/api/text-to-speech', msg).then(res => {
+      console.log(`statusCode: ${res.statusCode}`)
+      //console.log(res)
+    }).catch(error => {
+      console.error(error)
+    })
     
+  } else if(topic.indexOf('hermes/audioServer/default/playBytes/') == 0){
+    // get audio buffer from tts
+    console.log('topic: ' + topic);
+
+    fs.writeFile('result.wav', message, function(err) {
+      if (!err) {
+        console.log('audio write success');
+      }
+    });
+
   }
 });
 
