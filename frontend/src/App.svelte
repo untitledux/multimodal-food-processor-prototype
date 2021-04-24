@@ -14,6 +14,10 @@
     console.log(data);
   });
 
+  socket.on('intent', (data) => {
+    console.log(data);
+  });
+
   let recordAudio;
 
   const streamer = async () => {
