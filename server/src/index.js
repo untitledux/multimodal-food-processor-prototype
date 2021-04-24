@@ -54,14 +54,6 @@ mqtt_client.subscribe('hermes/intent/#', function (err) {
   }
 });
 
-// mqtt_client.subscribe('hermes/nlu/intentNotRecognized', function (err) {
-//   if (!err) {
-//     console.log('subscribe success hermes intentNotRecognized');
-//   } else {
-//     console.log(err);
-//   }
-// });
-
 // Subscribe 'get audio buffer from tts'
 mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', function (err) {
   if (!err) {
@@ -79,8 +71,6 @@ mqtt_client.on('message', function (topic, message) {
     processIntent(message);
   } else if (topic.indexOf('hermes/audioServer/default/playBytes/') == 0) {
     // get audio buffer from tts
-    console.log('GET AUDIO BUFFER');
-
     fs.writeFile('result.wav', message, function (err) {
       if (!err) {
         console.log('audio write success');
@@ -133,7 +123,7 @@ const sendTTS = () => {
       // console.log(res);
     })
     .catch((error) => {
-      // console.error(error);
+      console.error(error);
     });
 };
 
