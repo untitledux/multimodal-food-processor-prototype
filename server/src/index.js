@@ -9,6 +9,8 @@ const server = http.createServer(app);
 const { Readable } = require('stream');
 const wav = require('node-wav');
 
+let sessionid;
+
 dotenv.config({
   path: path.resolve(
     process.cwd(),
@@ -24,7 +26,7 @@ const io = require('socket.io')(server, {
 const ss = require('socket.io-stream');
 
 const PORT = process.env.PORT || 3000;
-const HOST = '127.0.0.1';
+const HOST = '0.0.0.0';
 
 // MQTT
 const mqtt = require('mqtt');
@@ -48,12 +50,18 @@ mqtt_client.on('message', function (topic, message) {
   // message is Buffer
 
   // get 'intent recognition' message
-  if(topic.indexOf('hermes/intent/') == 0){
+  if(topic.indexOf('hermes/intent/') == 0){    
     console.log('topic: ' + topic);
     console.log('message: ' + message);
     
-    // sample code for intent json parsing
     let intent_json = JSON.parse(message);
+
+    // send intent json to svelte
+    io.to(sessionid).emit('server_setup', 'test111111111');    
+    io.emit('server_setup', 'test2222222222');
+    io.emit('intent', intent_json);
+
+    // sample code for intent json parsing
     console.log('input: ' + intent_json.input);
     console.log('intentName: ' + intent_json.intent.intentName);
     if(intent_json.slots[0]==undefined){
@@ -80,6 +88,7 @@ io.on('connection', (client) => {
     console.log('client disconnected');
   });
   client.emit('server_setup', `Server connected [id=${client.id}]`);
+  sessionid = client.id;
 
   // when the client sends 'stream' events
   ss(client).on('stream', async (stream, data) => {
