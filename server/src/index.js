@@ -57,9 +57,9 @@ mqtt_client.on('message', function (topic, message) {
     let intent_json = JSON.parse(message);
 
     // send intent json to svelte
-    io.to(sessionid).emit('server_setup', 'test111111111');    
-    io.emit('server_setup', 'test2222222222');
-    io.emit('intent', intent_json);
+    io.to(sessionid).emit('intent', intent_json);
+
+    //io.emit('intent', intent_json.input);
 
     // sample code for intent json parsing
     console.log('input: ' + intent_json.input);
@@ -88,6 +88,7 @@ io.on('connection', (client) => {
     console.log('client disconnected');
   });
   client.emit('server_setup', `Server connected [id=${client.id}]`);
+
   sessionid = client.id;
 
   // when the client sends 'stream' events
