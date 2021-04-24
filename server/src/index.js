@@ -77,8 +77,6 @@ mqtt_client.on('message', function (topic, message) {
   console.log('topic: ' + topic);
   if (topic.indexOf('hermes/intent/') === 0) {
     processIntent(message);
-  } else if (topic.indexOf('hermes/nlu/intentNotRecognized')) {
-    // io.to(sessionid).emit('intentNotRecognized', message);
   } else if (topic.indexOf('hermes/audioServer/default/playBytes/') == 0) {
     // get audio buffer from tts
     console.log('GET AUDIO BUFFER');
@@ -124,7 +122,7 @@ io.on('connection', (client) => {
 
 // send text to tts (sample code)
 const sendTTS = () => {
-  let msg = 'hey';
+  let msg = 'hey what up?';
   const host_path =
     'http://' + process.env.MQTTHOST + ':12101/api/text-to-speech';
 
