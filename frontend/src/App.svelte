@@ -4,10 +4,12 @@
   const ENDPOINT = 'http://0.0.0.0:3000';
 
   let socket = io(ENDPOINT, { reconnection: true });
+  let socketId;
   let streaming = false;
   let mediaStream;
   socket.on('server_setup', (data) => {
-    console.log(data);
+    console.log('Server connected: id:', data);
+    socketId = data;
   });
 
   socket.on('mqtt_setup', (data) => {
@@ -16,6 +18,10 @@
 
   socket.on('intent', (data) => {
     console.log(data);
+  });
+
+  socket.on('intentNotRecognized', (data) => {
+    console.log('Intent not recognized');
   });
 
   let recordAudio;
@@ -49,6 +55,7 @@
           console.log(blob);
           ss(socket).emit('stream', streamSS, {
             name: 'stream.wav',
+            socketId,
             size: blob.size,
           });
           // pipe the audio blob to the read stream
