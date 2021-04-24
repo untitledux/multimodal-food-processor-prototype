@@ -8,15 +8,17 @@ const http = require('http');
 const server = http.createServer(app);
 const { Readable } = require('stream');
 const wav = require('node-wav');
-let socketClient;
 const axios = require('axios');
-
 let sessionid;
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '0.0.0.0';
+const MQTTHOST = process.env.MQTTHOST || '3.88.213.87';
+const RHASSPY_PORT = process.env.RHASSPY_PORT || 12183;
 
 dotenv.config({
   path: path.resolve(
     process.cwd(),
-    process.env.NODE_ENV == 'prod' ? '.env' : '.env.dev'
+    process.env.NODE_ENV == 'prod' ? '.env' : '.env.docker'
   ),
 });
 
@@ -27,23 +29,26 @@ const io = require('socket.io')(server, {
 });
 const ss = require('socket.io-stream');
 
-const PORT = process.env.PORT || 3000;
-const HOST = '0.0.0.0';
-
 // MQTT
 const mqtt = require('mqtt');
 const mqtt_options = {
-  host: process.env.MQTTHOST,
-  port: 12183,
+  host: MQTTHOST,
+  port: RHASSPY_PORT,
   protocol: 'mqtt',
 };
 
-let mqtt_client = mqtt.connect(mqtt_options);
+app.use(cors());
+
+app.get('/', (req, res) => {
+  res.send('Hello World Sonja!');
+});
+
+const mqtt_client = mqtt.connect(mqtt_options);
 
 // Subscribe 'intent recognition'
 mqtt_client.subscribe('hermes/intent/#', function (err) {
   if (!err) {
-    console.log('subscribe success');
+    console.log('subscribe success hermes intent');
   }
 });
 
@@ -51,23 +56,20 @@ mqtt_client.subscribe('hermes/intent/#', function (err) {
 mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', function (err) {
   if (!err) {
     console.log('subscribe to rhasspy MQTT success');
-    socketClient
-      ? client.emit('mqtt_setup', `MQTT subscription: successfull`)
+    sessionid
+      ? io.to(sessionid).emit('mqtt_setup', `MQTT subscription: successfull`)
       : null;
   } else {
     console.log(err);
-    if (socketClient)
-      socketClient
-        ? client.emit('mqtt_setup', `MQTT subscription: ${err}`)
-        : null;
+    sessionid
+      ? io.to(sessionid).emit('mqtt_setup', `MQTT subscription: ${err}`)
+      : null;
   }
 });
 
 // When subscribed topic is published  - you get message here
 mqtt_client.on('message', function (topic, message) {
-  // message is Buffer
-
-  if (topic.indexOf('hermes/intent/') == 0) {
+  if (topic.indexOf('hermes/intent/') === 0) {
     // get 'intent recognition' message
     console.log('topic: ' + topic);
     console.log('message: ' + message);
@@ -75,9 +77,9 @@ mqtt_client.on('message', function (topic, message) {
     let intent_json = JSON.parse(message);
 
     // send intent json to svelte
-    io.to(sessionid).emit('intent', intent_json);
-
-    //io.emit('intent', intent_json.input);
+    if (sessionid) {
+      io.to(sessionid).emit('intent', intent_json);
+    }
 
     // sample code for intent json parsing
     console.log('input: ' + intent_json.input);
@@ -93,8 +95,9 @@ mqtt_client.on('message', function (topic, message) {
 
     // send text to tts (sample code)
     let msg = 'hello world';
-    let host_path =
+    const host_path =
       'http://' + process.env.MQTTHOST + ':12101/api/text-to-speech';
+
     axios
       .post(host_path, msg)
       .then((res) => {
@@ -104,7 +107,7 @@ mqtt_client.on('message', function (topic, message) {
       .catch((error) => {
         console.error(error);
       });
-  } else if (topic.indexOf('hermes/audioServer/default/playBytes/') == 0) {
+  } else if (topic.indexOf('hermes/audioServer/default/playBytes/') === 0) {
     // get audio buffer from tts
     console.log('topic: ' + topic);
 
@@ -116,14 +119,7 @@ mqtt_client.on('message', function (topic, message) {
   }
 });
 
-app.use(cors());
-
-app.get('/', (req, res) => {
-  res.send('Hello World Sonja!');
-});
-
 io.on('connection', (client) => {
-  socketClient = client;
   console.log('client connected');
   client.on('disconnect', () => {
     socketClient = null;
