@@ -17,7 +17,7 @@ const axios = require('axios');
 let sessionid;
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
-const MQTTHOST = process.env.MQTTHOST || '3.88.213.87';
+const MQTTHOST = process.env.MQTTHOST || '3.94.213.112';
 const RHASSPY_PORT = process.env.RHASSPY_PORT || 12183;
 
 const io = require('socket.io')(server, {
