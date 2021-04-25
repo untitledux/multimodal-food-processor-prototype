@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "svelte",
-      "image": "public.ecr.aws/r0c3g2r8/nui_frontend",
+      "image": "568650432135.dkr.ecr.us-east-1.amazonaws.com/nui_frontend:nui_frontend",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -18,9 +18,15 @@
     },
     {
       "name": "nodejs",
-      "image": "public.ecr.aws/r0c3g2r8/nui_backend",
+      "image": "568650432135.dkr.ecr.us-east-1.amazonaws.com/nui_backend:nui_backend",
       "essential": true,
-      "memory": 128
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "containerPort": 3000
+        }
+      ],
     }
   ]
 }
