@@ -23,7 +23,7 @@
       "portMappings": [
         {
           "hostPort": 5000,
-          "containerPort": 35729
+          "containerPort": 5000
         }
       ],
       "links": [
