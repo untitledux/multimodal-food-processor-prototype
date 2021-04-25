@@ -1,0 +1,26 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "svelte",
+      "image": "public.ecr.aws/r0c3g2r8/nui_frontend",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 5000,
+          "containerPort": 35729
+        }
+      ],
+      "links": [
+        "nodejs"
+      ]
+    },
+    {
+      "name": "nodejs",
+      "image": "public.ecr.aws/r0c3g2r8/nui_backend",
+      "essential": true,
+      "memory": 128
+    }
+  ]
+}
