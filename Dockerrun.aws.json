@@ -2,25 +2,25 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "svelte",
-      "image": "568650432135.dkr.ecr.us-east-1.amazonaws.com/nui_frontend_test:nui_frontend",
+      "name": "dvwa",
+      "image": "vulnerables/web-dvwa",
       "essential": true,
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 5000,
-          "containerPort": 5000
+          "hostPort": 80,
+          "containerPort": 80
         }
       ]
     },
     {
-      "name": "nodejs",
-      "image": "568650432135.dkr.ecr.us-east-1.amazonaws.com/nui_backend_test:nui_backend",
+      "name": "yeasy",
+      "image": "yeasy/simple-web",
       "essential": true,
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 3000,
+          "hostPort": 8080,
           "containerPort": 3000
         }
       ]
