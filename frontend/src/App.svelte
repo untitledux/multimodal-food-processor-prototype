@@ -7,6 +7,7 @@
   let socketId;
   let streaming = false;
   let mediaStream;
+  let step = 1;
   socket.on('server_setup', (data) => {
     console.log('Server connected: id:', data);
     socketId = data;
@@ -18,13 +19,69 @@
 
   socket.on('intent', (data) => {
     console.log(data);
+    processIntent(data);
   });
 
   socket.on('intentNotRecognized', (data) => {
     console.log('Intent not recognized');
   });
 
+  socket.on('results', function (data) {
+    playOutput(data);
+  });
   let recordAudio;
+
+  const playOutput = (arrayBuffer) => {
+    let audioContext = new AudioContext();
+    let outputSource;
+    try {
+      if (arrayBuffer.byteLength > 0) {
+        audioContext.decodeAudioData(
+          arrayBuffer,
+          (buffer) => {
+            audioContext.resume();
+            outputSource = audioContext.createBufferSource();
+            outputSource.connect(audioContext.destination);
+            outputSource.buffer = buffer;
+            outputSource.start(0);
+          },
+          () => {
+            console.log(arguments);
+          }
+        );
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const processIntent = (data) => {
+    try {
+      let intentName = data.intent.intentName;
+      let msg = '';
+      switch (intentName) {
+        case 'NextStep':
+          msg = `You were on step ${step} now you are on step ${step + 1}  `;
+          step++;
+          break;
+
+        case 'GetTime':
+          const time = new Date().toLocaleTimeString('en-US', {
+            timeZone: 'Europe/Berlin',
+          });
+          console.log(time);
+          msg = time;
+          break;
+
+        default:
+          console.log('Intent not available');
+          break;
+      }
+      socket.emit('tts', msg);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const streamer = async () => {
     if (streaming) return;
@@ -85,6 +142,9 @@
   <div>
     <button on:click={streamer} class="stream-btn">Record</button>
     <button on:click={stopStreamer} class="stream-btn">Stop</button>
+    <div style="margin-top: 20px">
+      Step: {step}
+    </div>
   </div>
 </div>
 

@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 const mqtt_client = mqtt.connect(mqtt_options);
 
 // Subscribe 'intent recognition'
-mqtt_client.subscribe('hermes/intent/#', function (err) {
+mqtt_client.subscribe('hermes/intent/#', (err) => {
   if (!err) {
     console.log('subscribe success hermes intent');
   } else {
@@ -55,7 +55,7 @@ mqtt_client.subscribe('hermes/intent/#', function (err) {
 });
 
 // Subscribe 'get audio buffer from tts'
-mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', function (err) {
+mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', (err) => {
   if (!err) {
     console.log(`subscribe to MQTT Audio Buffer Get`);
   } else {
@@ -64,14 +64,15 @@ mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', function (err) {
 });
 
 // When subscribed topic is published  - you get message here
-mqtt_client.on('message', function (topic, message) {
+mqtt_client.on('message', (topic, message) => {
   // get 'intent recognition' message
   console.log('topic: ' + topic);
   if (topic.indexOf('hermes/intent/') === 0) {
     processIntent(message);
   } else if (topic.indexOf('hermes/audioServer/default/playBytes/') == 0) {
     // get audio buffer from tts
-    fs.writeFile('result.wav', message, function (err) {
+    io.emit('results', message);
+    fs.writeFile('result.wav', message, (err) => {
       if (!err) {
         console.log('audio write success');
       }
@@ -88,6 +89,10 @@ io.on('connection', (client) => {
 
   sessionid = client.id;
   console.log(sessionid);
+
+  client.on('tts', (data) => {
+    sendTTS(data);
+  });
 
   // when the client sends 'stream' events
   ss(client).on('stream', async (stream, data) => {
@@ -111,8 +116,7 @@ io.on('connection', (client) => {
 });
 
 // send text to tts (sample code)
-const sendTTS = () => {
-  let msg = 'hey what up?';
+const sendTTS = (msg) => {
   const host_path =
     'http://' + process.env.MQTTHOST + ':12101/api/text-to-speech';
 
@@ -145,7 +149,6 @@ const processIntent = (message) => {
       console.log('value: ' + intentJSON.slots[i].value.value);
     }
   }
-  sendTTS();
 };
 
 server.listen(PORT, HOST, () =>
