@@ -1,19 +1,5 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "volumes": [
-    {
-      "name": "svelte",
-      "host": {
-        "sourcePath": "./frontend/:/src/app"
-      }
-    },
-    {
-      "name": "nodejs",
-      "host": {
-        "sourcePath": "./server/:/src/app"
-      }
-    }
-  ],
   "containerDefinitions": [
     {
       "name": "svelte",
