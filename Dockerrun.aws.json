@@ -14,14 +14,14 @@
       ]
     },
     {
-      "name": "bitnami",
-      "image": "bitnami/node-example",
+      "name": "yeasy",
+      "image": "yeasy/simple-web",
       "essential": true,
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 3000,
-          "containerPort": 3000
+          "hostPort": 8080,
+          "containerPort": 80
         }
       ]
     }
