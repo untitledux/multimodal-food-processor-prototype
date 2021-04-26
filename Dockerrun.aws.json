@@ -2,8 +2,8 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "dvwa",
-      "image": "vulnerables/web-dvwa",
+      "name": "yeasy",
+      "image": "yeasy/simple-web",
       "essential": true,
       "memory": 128,
       "portMappings": [
@@ -14,13 +14,13 @@
       ]
     },
     {
-      "name": "yeasy",
-      "image": "yeasy/simple-web",
+      "name": "dvwa",
+      "image": "vulnerables/web-dvwa",
       "essential": true,
       "memory": 128,
       "portMappings": [
         {
-          "hostPort": 8080,
+          "hostPort": 3000,
           "containerPort": 80
         }
       ]
