@@ -1,0 +1,3164 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Open Sans', serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.overviewRecipeNadine {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: auto;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 1);
+  width: 1600px;
+  height: 900px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .menuFrame78ca44e9 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 1600px;
+  height: 131px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .menuFrame78ca44e9 .rechteck1a83b62e5 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(199, 199, 199, 1);
+  border-bottom-color: rgba(255, 255, 255, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(255, 255, 255, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(255, 255, 255, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(255, 255, 255, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: none;
+  width: 1600px;
+  height: 131px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .menuFrame {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 1600px;
+  height: 131px;
+  left: 0px;
+  top: 769px;
+}
+
+.overviewRecipeNadine .menuFrame .rechteck1 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(199, 199, 199, 1);
+  border-bottom-color: rgba(255, 255, 255, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(255, 255, 255, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(255, 255, 255, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(255, 255, 255, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: none;
+  width: 1600px;
+  height: 131px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .headline {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 590px;
+  height: 70px;
+  left: 56px;
+  top: 179px;
+}
+
+.overviewRecipeNadine .headline .nameOfRecipe {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: left;
+  letter-spacing: 0px;
+  color: rgba(112, 112, 112, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 60px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 590px;
+  height: 70px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .description {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 616px;
+  height: 71px;
+  left: 58px;
+  top: 269px;
+}
+
+.overviewRecipeNadine
+  .description
+  .placeADescriptionHerePlaceADescriptionHerePlaceADescriptionHere {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: left;
+  letter-spacing: 0px;
+  color: rgba(112, 112, 112, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 616px;
+  height: 71px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel4f5b230e {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 33.04px;
+  left: 60px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .difficultyLevel4f5b230e .gruppe2bef5bedd {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel4f5b230e
+  .gruppe2bef5bedd
+  .gruppe144a85ca6 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel4f5b230e
+  .gruppe2bef5bedd
+  .gruppe144a85ca6
+  .pfad16abf17cf {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(0, 0, 0, 1);
+  box-shadow: none;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel4f5b230e .gruppe4c24a296f {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 21.36px;
+  height: 4.19px;
+  left: 6.33px;
+  top: 28.84px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel4f5b230e
+  .gruppe4c24a296f
+  .gruppe396da0bfb {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 21.36px;
+  height: 4.19px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel4f5b230e
+  .gruppe4c24a296f
+  .gruppe396da0bfb
+  .pfad2c6af77c1 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(0, 0, 0, 1);
+  box-shadow: none;
+  width: 21.36px;
+  height: 4.19px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel6cddd143 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 33.04px;
+  left: 104px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .difficultyLevel6cddd143 .gruppe20a99f561 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel6cddd143
+  .gruppe20a99f561
+  .gruppe1f9dbb68a {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel6cddd143
+  .gruppe20a99f561
+  .gruppe1f9dbb68a
+  .pfad110192526 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(160, 160, 160, 1);
+  box-shadow: none;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel6cddd143 .gruppe4f7c0733e {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 21.36px;
+  height: 4.19px;
+  left: 6.33px;
+  top: 28.84px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel6cddd143
+  .gruppe4f7c0733e
+  .gruppe37b3c5f3e {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 21.36px;
+  height: 4.19px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .difficultyLevel6cddd143
+  .gruppe4f7c0733e
+  .gruppe37b3c5f3e
+  .pfad2db8efb48 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(160, 160, 160, 1);
+  box-shadow: none;
+  width: 21.36px;
+  height: 4.19px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 33.04px;
+  left: 148px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .difficultyLevel .gruppe2 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel .gruppe2 .gruppe1 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel .gruppe2 .gruppe1 .pfad1 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(160, 160, 160, 1);
+  box-shadow: none;
+  width: 34px;
+  height: 27.45px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel .gruppe4 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 21.36px;
+  height: 4.19px;
+  left: 6.33px;
+  top: 28.84px;
+}
+
+.overviewRecipeNadine .difficultyLevel .gruppe4 .gruppe3 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 21.36px;
+  height: 4.19px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .difficultyLevel .gruppe4 .gruppe3 .pfad2 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(160, 160, 160, 1);
+  box-shadow: none;
+  width: 21.36px;
+  height: 4.19px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .bigButton {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 495px;
+  height: 85px;
+  left: 553px;
+  top: 792px;
+}
+
+.overviewRecipeNadine .bigButton .rechteck2 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(255, 255, 255, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(255, 255, 255, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(255, 255, 255, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(255, 255, 255, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 43px;
+  border-top-right-radius: 43px;
+  border-bottom-left-radius: 43px;
+  border-bottom-right-radius: 43px;
+  box-shadow: none;
+  width: 495px;
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .bigButton .startRecipe {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 143px;
+  height: 70px;
+  left: 176px;
+  top: 7px;
+}
+
+.overviewRecipeNadine .bigButton .startRecipe .start {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(112, 112, 112, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 60px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 143px;
+  height: 70px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .backButton {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 148px;
+  height: 85px;
+  left: 60px;
+  top: 792px;
+}
+
+.overviewRecipeNadine .backButton .rechteck4687c8ed3 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(254, 255, 255, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(254, 255, 255, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(254, 255, 255, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(254, 255, 255, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 43px;
+  border-top-right-radius: 43px;
+  border-bottom-left-radius: 43px;
+  border-bottom-right-radius: 43px;
+  box-shadow: none;
+  width: 148px;
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .backButton .back {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(128, 128, 128, 1);
+  box-shadow: none;
+  width: 21.43px;
+  height: 33.97px;
+  left: 63px;
+  top: 25.49px;
+}
+
+.overviewRecipeNadine .favorite {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 49.1px;
+  height: 46.03px;
+  left: 844px;
+  top: 154.72px;
+}
+
+.overviewRecipeNadine .favorite .pfad3 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(0, 0, 0, 1);
+  box-shadow: none;
+  width: 49.1px;
+  height: 46.03px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .button044aed35 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 207px;
+  height: 63px;
+  left: 60px;
+  top: 480px;
+}
+
+.overviewRecipeNadine .button044aed35 .rechteck5 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(112, 112, 112, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(112, 112, 112, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(112, 112, 112, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(112, 112, 112, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: none;
+  width: 207px;
+  height: 63px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .button044aed35 .ingredients {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(112, 112, 112, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 164px;
+  height: 35px;
+  left: 22px;
+  top: 14px;
+}
+
+.overviewRecipeNadine .buttone738b716 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 207px;
+  height: 63px;
+  left: 60px;
+  top: 568px;
+}
+
+.overviewRecipeNadine .buttone738b716 .rechteck6 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(112, 112, 112, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(112, 112, 112, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(112, 112, 112, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(112, 112, 112, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: none;
+  width: 207px;
+  height: 63px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .buttone738b716 .tools {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(112, 112, 112, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 164px;
+  height: 35px;
+  left: 22px;
+  top: 14px;
+}
+
+.overviewRecipeNadine .button {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 207px;
+  height: 63px;
+  left: 60px;
+  top: 656px;
+}
+
+.overviewRecipeNadine .button .rechteck8 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(112, 112, 112, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(112, 112, 112, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(112, 112, 112, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(112, 112, 112, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: none;
+  width: 207px;
+  height: 63px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .button .steps {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(112, 112, 112, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 207px;
+  height: 35px;
+  left: 0px;
+  top: 14px;
+}
+
+.overviewRecipeNadine .timed894f4c6 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 127px;
+  height: 33px;
+  left: 223px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .timed894f4c6 .rechteck7 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(160, 160, 160, 1);
+  border-bottom-color: rgba(160, 160, 161, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(160, 160, 161, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(160, 160, 161, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(160, 160, 161, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: none;
+  width: 127px;
+  height: 33px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .timed894f4c6 .time {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 127px;
+  height: 23px;
+  left: 0px;
+  top: 5px;
+}
+
+.overviewRecipeNadine .infobox {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 499px;
+  height: 254px;
+  left: 310px;
+  top: 476px;
+}
+
+.overviewRecipeNadine
+  .infobox
+  .infoBoxThatDisplaceEitherTheInformationAboutTheIngedientsTheToolsOrTheStepsInfoBoxThatDisplaceEitherTheInformationAboutTheIngedientsTheToolsOrTheStepsInfoBoxThatDisplaceEitherTheInformationAboutTheIngedientsTh {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: left;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 22px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  width: 499px;
+  height: 254px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .portions3571f1a7 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 127px;
+  height: 33px;
+  left: 432px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .portions3571f1a7 .rechteck9 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(160, 160, 160, 1);
+  border-bottom-color: rgba(160, 160, 161, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(160, 160, 161, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(160, 160, 161, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(160, 160, 161, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: none;
+  width: 127px;
+  height: 33px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .portions3571f1a7 .portions {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 127px;
+  height: 23px;
+  left: 0px;
+  top: 5px;
+}
+
+.overviewRecipeNadine .variantse23d66d3 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 127px;
+  height: 33px;
+  left: 679px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .variantse23d66d3 .rechteck10 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(160, 160, 160, 1);
+  border-bottom-color: rgba(160, 160, 161, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(160, 160, 161, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(160, 160, 161, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(160, 160, 161, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: none;
+  width: 127px;
+  height: 33px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .variantse23d66d3 .variants {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: unset;
+  overflow-y: unset;
+  white-space: pre;
+  width: 127px;
+  height: 23px;
+  left: 0px;
+  top: 5px;
+}
+
+.overviewRecipeNadine .buttonIncrease {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 33px;
+  height: 33px;
+  left: 389px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .buttonIncrease .ellipse2a7e49751 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  box-shadow: none;
+  width: 33px;
+  height: 33px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .buttonIncrease .xb5731920 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 18px;
+  height: 20px;
+  left: 7px;
+  top: 3px;
+}
+
+.overviewRecipeNadine .buttonDecrease {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 33px;
+  height: 37px;
+  left: 569px;
+  top: 394px;
+}
+
+.overviewRecipeNadine .buttonDecrease .ellipse1938479b2 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  box-shadow: none;
+  width: 33px;
+  height: 33px;
+  left: 0px;
+  top: 4px;
+}
+
+.overviewRecipeNadine .buttonDecrease .x24887992 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 18px;
+  height: 20px;
+  left: 8px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .buttonLeft {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 33px;
+  height: 33px;
+  left: 636px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .buttonLeft .ellipse2 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  box-shadow: none;
+  width: 33px;
+  height: 33px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .buttonLeft .x4584305b {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 18px;
+  height: 20px;
+  left: 7px;
+  top: 3px;
+}
+
+.overviewRecipeNadine .buttonRight {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 33px;
+  height: 33px;
+  left: 816px;
+  top: 398px;
+}
+
+.overviewRecipeNadine .buttonRight .ellipse1 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(112, 112, 112, 1);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  box-shadow: none;
+  width: 33px;
+  height: 33px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .buttonRight .x220d7f9a {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial;
+  text-decoration: none;
+  box-shadow: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 18px;
+  height: 20px;
+  left: 8px;
+  top: 3px;
+}
+
+.overviewRecipeNadine .voiceAssistantVisual {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 91px;
+  height: 91px;
+  left: 755px;
+  top: 20px;
+}
+
+.overviewRecipeNadine .voiceAssistantVisual .ellipse3 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(128, 128, 128, 1);
+  stroke: rgba(128, 128, 128, 1);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  box-shadow: none;
+  width: 91px;
+  height: 91px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .voiceAssistantVisual .soundwave {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 48.07px;
+  height: 44.37px;
+  left: 21px;
+  top: 23px;
+}
+
+.overviewRecipeNadine .voiceAssistantVisual .soundwave .pfad4 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(255, 255, 255, 1);
+  box-shadow: none;
+  width: 48.07px;
+  height: 44.37px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .sliderInfobox {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 10px;
+  height: 254px;
+  left: 839px;
+  top: 476px;
+}
+
+.overviewRecipeNadine .sliderInfobox .rechteck11 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(128, 128, 128, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(128, 128, 128, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(128, 128, 128, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(128, 128, 128, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: none;
+  width: 10px;
+  height: 254px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .sliderInfobox .rechteck12 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(128, 128, 128, 1);
+  border-bottom-color: rgba(128, 128, 128, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(128, 128, 128, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(128, 128, 128, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(128, 128, 128, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: none;
+  width: 10px;
+  height: 66px;
+  left: 0px;
+  top: 14px;
+}
+
+.overviewRecipeNadine .pictureced73a61 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 669px;
+  height: 638px;
+  left: 931px;
+  top: 131px;
+}
+
+.overviewRecipeNadine .pictureced73a61 .recipeImage {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 669px;
+  height: 638px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .pictureced73a61 .recipeImage .rechteck3 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(128, 128, 128, 1);
+  border-bottom-color: rgba(128, 128, 129, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(128, 128, 129, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(128, 128, 129, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(128, 128, 129, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: none;
+  width: 669px;
+  height: 638px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .pictureced73a61 .picture {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(108, 108, 108, 1);
+  box-shadow: none;
+  width: 292.59px;
+  height: 244.19px;
+  left: 188px;
+  top: 197px;
+}
+
+.overviewRecipeNadine .cancelButton56219e3d {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 87px;
+  height: 85px;
+  left: 47px;
+  top: 20px;
+}
+
+.overviewRecipeNadine .cancelButton56219e3d .cancelButton55cad0b3 {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 87px;
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .cancelButton56219e3d
+  .cancelButton55cad0b3
+  .rechteck4a7259dad {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(254, 255, 255, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(254, 255, 255, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(254, 255, 255, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(254, 255, 255, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 43px;
+  border-top-right-radius: 43px;
+  border-bottom-left-radius: 43px;
+  border-bottom-right-radius: 43px;
+  box-shadow: none;
+  width: 87px;
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .cancelButton56219e3d .x {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 33.76px;
+  height: 33.76px;
+  left: 26.62px;
+  top: 25.62px;
+}
+
+.overviewRecipeNadine .cancelButton56219e3d .x .pfad5 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(128, 128, 128, 1);
+  stroke: rgba(128, 128, 128, 1);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  box-shadow: none;
+  width: 35.76px;
+  height: 35.76px;
+  left: -1px;
+  top: -1px;
+}
+
+.overviewRecipeNadine .cancelButton56219e3d .x .pfad6 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(128, 128, 128, 1);
+  stroke: rgba(128, 128, 128, 1);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  box-shadow: none;
+  width: 35.76px;
+  height: 35.76px;
+  left: -1px;
+  top: -1px;
+}
+
+.overviewRecipeNadine .volumeButton {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 87px;
+  height: 85px;
+  left: 1467px;
+  top: 26px;
+}
+
+.overviewRecipeNadine .volumeButton .cancelButtonf92b326b {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 87px;
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .volumeButton .cancelButtonf92b326b .cancelButton {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 87px;
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine
+  .volumeButton
+  .cancelButtonf92b326b
+  .cancelButton
+  .rechteck4 {
+  position: absolute;
+  box-sizing: border-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom-color: rgba(254, 255, 255, 1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgba(254, 255, 255, 1);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgba(254, 255, 255, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgba(254, 255, 255, 1);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-left-radius: 43px;
+  border-top-right-radius: 43px;
+  border-bottom-left-radius: 43px;
+  border-bottom-right-radius: 43px;
+  box-shadow: none;
+  width: 87px;
+  height: 85px;
+  left: 0px;
+  top: 0px;
+}
+
+.overviewRecipeNadine .volumeButton .volumeUpSolid {
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  overflow-x: unset;
+  overflow-y: unset;
+  background-color: transparent;
+  width: 39.17px;
+  height: 35px;
+  left: 23.92px;
+  top: 25px;
+}
+
+.overviewRecipeNadine .volumeButton .volumeUpSolid .pfad7 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(128, 128, 128, 1);
+  box-shadow: none;
+  width: 6.87px;
+  height: 17.57px;
+  left: 24.51px;
+  top: 8.7px;
+}
+
+.overviewRecipeNadine .volumeButton .volumeUpSolid .pfad8 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(128, 128, 128, 1);
+  box-shadow: none;
+  width: 11.89px;
+  height: 32px;
+  left: 27.28px;
+  top: 1.51px;
+}
+
+.overviewRecipeNadine .volumeButton .volumeUpSolid .pfad9 {
+  position: absolute;
+  box-sizing: content-box;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -ms-transform-origin: center;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 1;
+  cursor: default;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  fill: rgba(128, 128, 128, 1);
+  box-shadow: none;
+  width: 21.89px;
+  height: 35px;
+  left: 0px;
+  top: 0px;
+}
