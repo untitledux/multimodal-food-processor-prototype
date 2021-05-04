@@ -91,11 +91,11 @@ mqtt_client.on('message', (topic, message) => {
   } else if(topic.indexOf('hermes/tts/sayFinished') === 0) {
     // end session
     let msg = '{\"sessionId\": \"'+sessionId_Mqtt+'\"}';
-    mqtt_client.publish('hermes/dialogueManager/endSession', msg);
+    //mqtt_client.publish('hermes/dialogueManager/endSession', msg);
     
     // send 'hotword detected message' to start session
     msg = '{\"modelId\": \"default\", \"modelVersion\": \"\", \"modelType\": \"personal\", \"currentSensitivity\": 1.0, \"siteId\": \"default\", \"sessionId\": null, \"sendAudioCaptured\": null, \"lang\": null, \"customEntities\": null}';
-    mqtt_client.publish('hermes/hotword/default/detected', msg);
+    //mqtt_client.publish('hermes/hotword/default/detected', msg);
   }
 });
 
@@ -151,25 +151,82 @@ const sendTTS = (msg) => {
 };
 
 const processIntent = (message) => {
-  let intentJSON = JSON.parse(message);
+  let intentJSON = JSON.parse(message);  
   // send intent json to frontend
-  if (sessionid) {
-    io.to(sessionid).emit('intent', intentJSON);
-  }
+  // if (sessionid) {
+  //   io.to(sessionid).emit('intent', intentJSON);
+  // }
 
   // sample code for intent json parsing
-  console.log('input: ' + intentJSON.input);
-  console.log('intentName: ' + intentJSON.intent.intentName);
+  // console.log('input: ' + intentJSON.input);
+  // console.log('intentName: ' + intentJSON.intent.intentName);
+  // sessionId_Mqtt = intentJSON.sessionId;
+  // console.log('sessionId: ' + sessionId_Mqtt);
+  // if (intentJSON.slots[0] == undefined) {
+  //   console.log('this intention has no slots');
+  // } else {
+  //   for (var i in intentJSON.slots) {
+  //     console.log('entity: ' + intentJSON.slots[i].entity);
+  //     console.log('value: ' + intentJSON.slots[i].value.value);
+  //   }
+  // }
+
   sessionId_Mqtt = intentJSON.sessionId;
   console.log('sessionId: ' + sessionId_Mqtt);
-  if (intentJSON.slots[0] == undefined) {
-    console.log('this intention has no slots');
-  } else {
-    for (var i in intentJSON.slots) {
-      console.log('entity: ' + intentJSON.slots[i].entity);
-      console.log('value: ' + intentJSON.slots[i].value.value);
+
+  try {
+    let intentName = intentJSON.intent.intentName;
+    let msg = '';
+    switch (intentName) {
+      // case 'NextStep':
+      //   msg = `You were on step ${step} now you are on step ${step + 1}  `;
+      //   step++;
+      //   break;
+
+      case 'Cancel':
+        cancelRecipe(intentJSON);
+        break;
+
+      case 'GetTime':
+        const time = new Date().toLocaleTimeString('en-US', {
+          timeZone: 'Europe/Berlin',
+        });
+        console.log(time);
+        msg = time;
+        break;
+
+      default:
+        console.log('Intent not available');
+        break;
     }
+    //socket.emit('tts', msg);
+    sendTTS(msg);
+  } catch (err) {
+    console.error(err);
   }
+};
+
+const cancelRecipe = (msg) => {
+  
+  let intentFilter = '[\"Cancel\"]';
+  let text = 'do you really want to cancel the recipe?';
+
+  let data;
+  
+  if (msg.slots[0] == undefined) {
+    console.log('this intention has no slots');
+    
+    data = '{\"sessionId\": \"'+sessionId_Mqtt+'\", \"text\": \"'+text+'\", \"intentFilter\": '+intentFilter+'}';
+    mqtt_client.publish('hermes/dialogueManager/continueSession', data);
+
+  } else {          
+    console.log('entity0: ' + msg.slots[0].entity); // answer
+    console.log('value0: ' + msg.slots[0].value.value); // yes
+    
+    data = '{\"sessionId\": \"'+sessionId_Mqtt+'\", "text": "Okay"}';
+    mqtt_client.publish('hermes/dialogueManager/endSession', data);
+  }
+  
 };
 
 server.listen(PORT, HOST, () =>
