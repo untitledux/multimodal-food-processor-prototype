@@ -8,6 +8,7 @@
   let streaming = false;
   let mediaStream;
   let step = 1;
+  let sessionId;
   socket.on('server_setup', (data) => {
     console.log('Server connected: id:', data);
     socketId = data;
@@ -57,12 +58,14 @@
 
   const processIntent = (data) => {
     try {
+      sessionId = data.sessionId;
       let intentName = data.intent.intentName;
       let msg = '';
       switch (intentName) {
         case 'NextStep':
           msg = `You were on step ${step} now you are on step ${step + 1}  `;
           step++;
+          socket.emit('singleDialog', sessionId);
           break;
 
         case 'GetTime':
@@ -71,6 +74,11 @@
           });
           console.log(time);
           msg = time;
+          socket.emit('singleDialog', sessionId);
+          break;
+
+        case 'Cancel':
+          cancelRecipe(data);
           break;
 
         default:
@@ -82,6 +90,31 @@
       console.error(err);
     }
   };
+
+  const cancelRecipe = (msg) => {
+    let intentFilter = '[\"Cancel\"]';
+    let text = 'do you really want to cancel the recipe?';
+    let topic;
+    let data;
+    
+    if (msg.slots[0] == undefined) {
+      console.log('this intention has no slots');
+
+      topic = 'hermes/dialogueManager/continueSession';
+      data = '{\"sessionId\": \"'+sessionId+'\", \"text\": \"'+text+'\", \"intentFilter\": '+intentFilter+'}';
+      
+      socket.emit('mqttpublish', { topic: topic, data: data });
+
+    } else {          
+      console.log('entity0: ' + msg.slots[0].entity); // answer
+      console.log('value0: ' + msg.slots[0].value.value); // yes
+      
+      topic = 'hermes/dialogueManager/endSession';
+      data = '{\"sessionId\": \"'+sessionId+'\", "text": "Okay"}';
+      socket.emit('mqttpublish', { topic: topic, data: data });
+    }
+  
+};
 
   const streamer = async () => {
     if (!streaming) {
