@@ -120,9 +120,6 @@ const mqttPublish = (msg) => {
   let topic = msg.topic;
   let data = JSON.stringify(msg.data);
 
-  console.log('topic', topic);
-  console.log('data', data);
-
   mqtt_client.publish(topic, data);
 };
 
