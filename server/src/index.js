@@ -64,11 +64,10 @@ mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', (err) => {
 
 // When subscribed topic is published  - you get message here
 mqtt_client.on('message', (topic, message) => {
-  
   console.log('topic: ' + topic);
-  
+
   if (topic.indexOf('hermes/intent/') === 0) {
-    let intentJSON = JSON.parse(message); 
+    let intentJSON = JSON.parse(message);
     io.emit('intent', intentJSON);
   } else if (topic.indexOf('hermes/audioServer/default/playBytes/') == 0) {
     // get audio buffer from tts
@@ -119,7 +118,10 @@ io.on('connection', (client) => {
 
 const mqttPublish = (msg) => {
   let topic = msg.topic;
-  let data = msg.data;
+  let data = JSON.stringify(msg.data);
+
+  console.log('topic', topic);
+  console.log('data', data);
 
   mqtt_client.publish(topic, data);
 };

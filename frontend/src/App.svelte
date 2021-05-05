@@ -58,7 +58,7 @@
   const processIntent = (data) => {
     try {
       let intentName = data.intent.intentName;
-      let msg = '';
+      let msg;
       switch (intentName) {
         case 'NextStep':
           msg = `You were on step ${step} now you are on step ${step + 1}  `;
@@ -81,39 +81,44 @@
           console.log('Intent not available');
           break;
       }
-      socket.emit('tts', msg);
+      if (msg) {
+        socket.emit('tts', msg);
+      }
     } catch (err) {
       console.error(err);
     }
   };
 
   const cancelRecipe = (msg) => {
-    let intentFilter = '[\"Cancel\"]';
+    let intentFilter = '["Cancel"]';
     let text;
     let topic;
     let data;
-    let sessionId=msg.sessionId;
-    
+    let sessionId = msg.sessionId;
+
     if (msg.slots[0] == undefined) {
       console.log('this intention has no slots');
 
       topic = 'hermes/dialogueManager/continueSession';
       text = 'do you really want to cancel the recipe?';
-      data = '{\"sessionId\": \"'+sessionId+'\", \"text\": \"'+text+'\", \"intentFilter\": '+intentFilter+'}';
-      
-      socket.emit('mqttpublish', { topic: topic, data: data });
 
-    } else {          
+      data = {
+        sessionId,
+        text,
+        intentFilter,
+      };
+
+      socket.emit('mqttpublish', { topic, data });
+    } else {
       console.log('entity0: ' + msg.slots[0].entity); // answer
-      console.log('value0: ' + msg.slots[0].value.value); // yes or no 
-      
+      console.log('value0: ' + msg.slots[0].value.value); // yes or no
+
       topic = 'hermes/dialogueManager/endSession';
       text = 'Okay';
-      data = '{\"sessionId\": \"'+sessionId+'\", "text": "'+text+'"}';
+      data = '{"sessionId": "' + sessionId + '", "text": "' + text + '"}';
       socket.emit('mqttpublish', { topic: topic, data: data });
     }
-  
-};
+  };
 
   const streamer = async () => {
     if (!streaming) {
