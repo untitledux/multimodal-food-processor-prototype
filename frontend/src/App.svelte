@@ -88,7 +88,7 @@
   };
 
   const cancelRecipe = (msg) => {
-    let intentFilter = '[\"Cancel\"]';
+    let intentFilter;
     let text;
     let topic;
     let data;
@@ -99,9 +99,14 @@
 
       topic = 'hermes/dialogueManager/continueSession';
       text = 'do you really want to cancel the recipe?';
-      data = '{\"sessionId\": \"'+sessionId+'\", \"text\": \"'+text+'\", \"intentFilter\": '+intentFilter+'}';
+      intentFilter = ["Cancel"];
+      data = {
+        sessionId,
+        text,
+        intentFilter
+      }
       
-      socket.emit('mqttpublish', { topic: topic, data: data });
+      socket.emit('mqttpublish', { topic, data });
 
     } else {          
       console.log('entity0: ' + msg.slots[0].entity); // answer
@@ -109,8 +114,12 @@
       
       topic = 'hermes/dialogueManager/endSession';
       text = 'Okay';
-      data = '{\"sessionId\": \"'+sessionId+'\", "text": "'+text+'"}';
-      socket.emit('mqttpublish', { topic: topic, data: data });
+      data = {
+        sessionId,
+        text
+      }
+      
+      socket.emit('mqttpublish', { topic, data });
     }
   
 };

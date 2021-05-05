@@ -119,7 +119,7 @@ io.on('connection', (client) => {
 
 const mqttPublish = (msg) => {
   let topic = msg.topic;
-  let data = msg.data;
+  let data = JSON.stringify(msg.data);
 
   mqtt_client.publish(topic, data);
 };
