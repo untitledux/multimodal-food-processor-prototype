@@ -19,8 +19,6 @@ const HOST = process.env.HOST || '0.0.0.0';
 const MQTTHOST = process.env.MQTTHOST || '3.94.213.112';
 const RHASSPY_PORT = process.env.RHASSPY_PORT || 12183;
 
-let sessionId_Mqtt;
-
 const io = require('socket.io')(server, {
   cors: {
     origin: '*',
@@ -64,15 +62,6 @@ mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', (err) => {
   }
 });
 
-// Subscribe 'get tts finished'
-mqtt_client.subscribe('hermes/tts/sayFinished', (err) => {
-  if (!err) {
-    console.log(`subscribe to MQTT ttsFinished`);
-  } else {
-    console.log(err);
-  }
-});
-
 // When subscribed topic is published  - you get message here
 mqtt_client.on('message', (topic, message) => {
   
@@ -89,19 +78,6 @@ mqtt_client.on('message', (topic, message) => {
         console.log('audio write success');
       }
     });
-  } else if(topic.indexOf('hermes/tts/sayFinished') === 0) {
-
-    if(sessionId_Mqtt != undefined){
-      // end session
-      let msg = '{\"sessionId\": \"'+sessionId_Mqtt+'\"}';          
-      mqtt_client.publish('hermes/dialogueManager/endSession', msg);
-
-      // send 'hotword detected message' to start session
-      msg = '{\"modelId\": \"default\", \"modelVersion\": \"\", \"modelType\": \"personal\", \"currentSensitivity\": 1.0, \"siteId\": \"default\", \"sessionId\": null, \"sendAudioCaptured\": null, \"lang\": null, \"customEntities\": null}';
-      mqtt_client.publish('hermes/hotword/default/detected', msg);
-      
-      sessionId_Mqtt = undefined;
-    }
   }
 });
 
@@ -118,11 +94,6 @@ io.on('connection', (client) => {
 
   client.on('mqttpublish', (data) => {
     mqttPublish(data);
-  });
-
-  client.on('singleDialog', (data) => {
-    sessionId_Mqtt = data;
-    console.log('singleDialog');
   });
 
   // when the client sends 'stream' events
