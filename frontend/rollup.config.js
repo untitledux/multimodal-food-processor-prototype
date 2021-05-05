@@ -13,7 +13,10 @@ const production = !process.env.ROLLUP_WATCH;
 
 const aliases = alias({
   resolve: ['.svelte', '.js'], //optional, by default this will just look for .js files or folders
-  entries: [{ find: 'components', replacement: 'src/components' }],
+  entries: [
+    { find: 'components', replacement: 'src/components' },
+    { find: 'utils', replacement: 'src/utils' },
+  ],
 });
 
 function serve() {

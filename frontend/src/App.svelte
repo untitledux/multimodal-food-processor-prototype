@@ -1,13 +1,32 @@
 <script>
   import { io } from 'socket.io-client';
+  import { onMount } from 'svelte';
   import RecordRTC from 'recordrtc';
+  import ImageWrapper from 'components/containers/ImageWrapper.svelte';
+  import { images } from 'utils/imageTemplates.js';
+
+  let activeObject;
+
+  onMount(() => {
+    iterate(images);
+  });
+
+  const iterate = (obj) => {
+    Object.keys(obj).forEach((key) => {
+      if (key === 'active' && obj[key] === true) {
+        activeObject = obj;
+      } else if (typeof obj[key] === 'object') {
+        iterate(obj[key]);
+      }
+    });
+  };
+
   const ENDPOINT = 'http://0.0.0.0:3000';
 
   let socket = io(ENDPOINT, { reconnection: true });
   let socketId;
   let streaming = false;
   let mediaStream;
-  let step = 1;
   socket.on('server_setup', (data) => {
     console.log('Server connected: id:', data);
     socketId = data;
@@ -61,8 +80,6 @@
       let msg;
       switch (intentName) {
         case 'NextStep':
-          msg = `You were on step ${step} now you are on step ${step + 1}  `;
-          step++;
           break;
 
         case 'GetTime':
@@ -179,89 +196,16 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/socket.io-stream/0.9.1/socket.io-stream.js"></script>
 </svelte:head>
 
-<div>
-  <div>
-    <div
-      class:active={streaming ? true : false}
-      class="button"
-      on:click={streamer}
-    >
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-      <div class="bar" />
-    </div>
-
-    <div style="margin-top: 20px">
-      Step: {step}
-    </div>
-  </div>
+<div
+  class="wrapper dem-display-flex dem-justify-content-center dem-align-items-center"
+>
+  <ImageWrapper {...activeObject} />
 </div>
 
 <style lang="scss">
-  .button {
-    height: 100px;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    background-color: red;
-    border-radius: 50%;
-    &.active > .bar {
-      animation: sound 0ms -600ms linear infinite alternate;
-    }
-  }
-
-  .bar {
-    background: blue;
-    bottom: 1px;
-    height: 3px;
-    width: 5px;
-    margin: 0px 2px;
-    border-radius: 5px;
-  }
-
-  @keyframes sound {
-    0% {
-      opacity: 0.35;
-      height: 3px;
-    }
-    100% {
-      opacity: 1;
-      height: 50px;
-    }
-  }
-
-  .bar:nth-child(1) {
-    height: 10px;
-    animation-duration: 474ms !important;
-  }
-  .bar:nth-child(2) {
-    height: 30px;
-    animation-duration: 433ms !important;
-  }
-  .bar:nth-child(3) {
-    height: 50px;
-    animation-duration: 407ms !important;
-  }
-  .bar:nth-child(4) {
-    height: 70px;
-    animation-duration: 458ms !important;
-  }
-  .bar:nth-child(5) {
-    height: 50px;
-    animation-duration: 400ms !important;
-  }
-  .bar:nth-child(6) {
-    height: 30px;
-    animation-duration: 427ms !important;
-  }
-  .bar:nth-child(7) {
-    height: 10px;
-    animation-duration: 441ms !important;
+  .wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: #d2d2d2;
   }
 </style>
