@@ -3,30 +3,36 @@
   import { onMount } from 'svelte';
   import RecordRTC from 'recordrtc';
   import ImageWrapper from 'components/containers/ImageWrapper.svelte';
-  import { images } from 'utils/imageTemplates.js';
+  import { images } from 'utils/store.js';
 
+  const ENDPOINT = 'http://0.0.0.0:3000';
+  let socket = io(ENDPOINT, { reconnection: true });
   let activeObject;
+  let socketId;
+  let intentName;
+  let slots;
+  let recordAudio;
+  let streaming = false;
+  let mediaStream;
 
   onMount(() => {
-    iterate(images);
+    streamer();
   });
 
-  const iterate = (obj) => {
+  $: if ($images) {
+    setActiveImage({ obj: $images, key: 'active', value: true });
+  }
+
+  const setActiveImage = ({ obj, key: keyExpected, value }) => {
     Object.keys(obj).forEach((key) => {
-      if (key === 'active' && obj[key] === true) {
+      if (key === keyExpected && obj[key] === value) {
         activeObject = obj;
       } else if (typeof obj[key] === 'object') {
-        iterate(obj[key]);
+        setActiveImage({ obj: obj[key], key: keyExpected, value });
       }
     });
   };
 
-  const ENDPOINT = 'http://0.0.0.0:3000';
-
-  let socket = io(ENDPOINT, { reconnection: true });
-  let socketId;
-  let streaming = false;
-  let mediaStream;
   socket.on('server_setup', (data) => {
     console.log('Server connected: id:', data);
     socketId = data;
@@ -37,7 +43,6 @@
   });
 
   socket.on('intent', (data) => {
-    console.log(data);
     processIntent(data);
   });
 
@@ -45,10 +50,13 @@
     console.log('Intent not recognized');
   });
 
+  const handleTTS = (event) => {
+    socket.emit('tts', event.detail.text);
+  };
+
   socket.on('results', function (data) {
     playOutput(data);
   });
-  let recordAudio;
 
   const playOutput = (arrayBuffer) => {
     let audioContext = new AudioContext();
@@ -75,32 +83,10 @@
   };
 
   const processIntent = (data) => {
+    console.log(data);
     try {
-      let intentName = data.intent.intentName;
-      let msg;
-      switch (intentName) {
-        case 'NextStep':
-          break;
-
-        case 'GetTime':
-          const time = new Date().toLocaleTimeString('en-US', {
-            timeZone: 'Europe/Berlin',
-          });
-          console.log(time);
-          msg = time;
-          break;
-
-        case 'Cancel':
-          cancelRecipe(data);
-          break;
-
-        default:
-          console.log('Intent not available');
-          break;
-      }
-      if (msg) {
-        socket.emit('tts', msg);
-      }
+      intentName = data.intent.intentName;
+      slots = data.slots.length ? data.slots : null;
     } catch (err) {
       console.error(err);
     }
@@ -169,7 +155,7 @@
             let streamSS = ss.createStream();
             // stream directly to server
             // it will be temp. stored locally
-            console.log(blob);
+            // console.log(blob);
             ss(socket).emit('stream', streamSS, {
               name: 'stream.wav',
               socketId,
@@ -199,7 +185,12 @@
 <div
   class="wrapper dem-display-flex dem-justify-content-center dem-align-items-center"
 >
-  <ImageWrapper {...activeObject} />
+  <ImageWrapper
+    on:TTS={handleTTS}
+    {...activeObject}
+    intent={intentName}
+    {slots}
+  />
 </div>
 
 <style lang="scss">
