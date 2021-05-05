@@ -23,6 +23,9 @@
         "system": "nanotts"
     },
     "wake": {
+        "porcupine": {
+            "keyword_path": "porcupine_linux.ppn"
+        },
         "system": "porcupine"
     }
 }
