@@ -2,30 +2,34 @@
   import { io } from 'socket.io-client';
   import { onMount } from 'svelte';
   import RecordRTC from 'recordrtc';
-  import ImageWrapper from 'components/containers/ImageWrapper.svelte';
-  import { images } from 'utils/store.js';
+  import OuterRootWrapper from 'components/containers/OuterRootWrapper.svelte';
+  import { images, currRecipe, dialogueManager } from 'utils/store.js';
 
   const ENDPOINT = 'http://0.0.0.0:3000';
   let socket = io(ENDPOINT, { reconnection: true });
   let activeObject;
   let socketId;
   let intentName;
+  let sessionId;
   let slots;
   let recordAudio;
   let streaming = false;
   let mediaStream;
 
   onMount(() => {
+    //Enable streaming on page load
     streamer();
   });
 
-  $: if ($images) {
+  // Run reactive everytime when store images change
+  $: {
     setActiveImage({ obj: $images, key: 'active', value: true });
   }
 
   const setActiveImage = ({ obj, key: keyExpected, value }) => {
     Object.keys(obj).forEach((key) => {
       if (key === keyExpected && obj[key] === value) {
+        console.log('IN ACTIVE OBJECT');
         activeObject = obj;
       } else if (typeof obj[key] === 'object') {
         setActiveImage({ obj: obj[key], key: keyExpected, value });
@@ -43,6 +47,7 @@
   });
 
   socket.on('intent', (data) => {
+    console.log('SOCKET INTENT');
     processIntent(data);
   });
 
@@ -85,46 +90,24 @@
   const processIntent = (data) => {
     console.log(data);
     try {
-      intentName = data.intent.intentName;
+      if ($dialogueManager) {
+        $dialogueManager = false;
+        console.log('IIIIIIINNNNN ');
+        intentName = data.intent.intentName + 'Response';
+      } else {
+        intentName = data.intent.intentName;
+      }
       slots = data.slots.length ? data.slots : null;
+      sessionId = data.sessionId;
     } catch (err) {
       console.error(err);
     }
   };
 
-  const cancelRecipe = (msg) => {
-    let intentFilter;
-    let text;
-    let topic;
-    let data;
-    let sessionId = msg.sessionId;
-
-    if (msg.slots[0] == undefined) {
-      console.log('this intention has no slots');
-
-      topic = 'hermes/dialogueManager/continueSession';
-      text = 'do you really want to cancel the recipe?';
-      intentFilter = ['Cancel'];
-      data = {
-        sessionId,
-        text,
-        intentFilter,
-      };
-
-      socket.emit('mqttpublish', { topic, data });
-    } else {
-      console.log('entity0: ' + msg.slots[0].entity); // answer
-      console.log('value0: ' + msg.slots[0].value.value); // yes or no
-
-      topic = 'hermes/dialogueManager/endSession';
-      text = 'Okay';
-      data = {
-        sessionId,
-        text,
-      };
-
-      socket.emit('mqttpublish', { topic, data });
-    }
+  const handleDialogueManager = (event) => {
+    let topic = event.detail.topic;
+    let data = event.detail.data;
+    socket.emit('mqttpublish', { topic, data });
   };
 
   const streamer = async () => {
@@ -185,18 +168,24 @@
 <div
   class="wrapper dem-display-flex dem-justify-content-center dem-align-items-center"
 >
-  <ImageWrapper
+  <OuterRootWrapper
     on:TTS={handleTTS}
+    on:DialogueManager={handleDialogueManager}
     {...activeObject}
     intent={intentName}
+    {sessionId}
     {slots}
   />
 </div>
 
 <style lang="scss">
   .wrapper {
+    padding: 100px;
     height: 100vh;
     width: 100vw;
     background-color: #d2d2d2;
+    @media screen and (max-width: 800px) {
+      padding: 50px;
+    }
   }
 </style>
