@@ -117,8 +117,8 @@ io.on('connection', (client) => {
 });
 
 const mqttPublish = (msg) => {
-  let topic = msg.topic;
-  let data = JSON.stringify(msg.data);
+  const topic = msg.topic;
+  const data = JSON.stringify(msg.data);
 
   mqtt_client.publish(topic, data);
 };
@@ -140,5 +140,5 @@ const sendTTS = (msg) => {
 };
 
 server.listen(PORT, HOST, () =>
-  console.log(`Example app listening on host ${HOST} and port ${PORT}!`)
+  console.log(`App listening on host ${HOST} and port ${PORT}!`)
 );

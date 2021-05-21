@@ -6,13 +6,15 @@
   const dispatch = createEventDispatcher();
   export let url;
   export let id;
-  export let intent;
 
-  const mapRecipes = [{ id: 'CatalanCream', name: 'catalan cream' }];
+  const mapRecipes = [
+    { id: 'CatalanCream', name: 'catalan cream' },
+    { id: 'CurryChicken', name: 'chicken' },
+  ];
 
   // Make functions available in parent
   export const overlayFunctions = {
-    selectRecipe({ screenId, actionId, voice }) {
+    selectRecipe({ screenId, actionId, voice, sessionId }) {
       setActiveToFalse($images, screenId);
       let recipeId;
       let rawSlot;
@@ -22,14 +24,23 @@
       } else {
         recipeId = actionId;
       }
-
       currRecipe.set($images.recipes.find((obj) => obj.id === recipeId));
       $currRecipe.overview[0].active = true;
       $images = $images;
 
       if (voice) {
-        dispatch('TTS', {
-          text: `You are now on the ${rawSlot} recipe.`,
+        const topic = 'hermes/dialogueManager/continueSession';
+        const intentFilter = ['Portions'];
+        const text = `You are now on the ${rawSlot} recipe. How many portions do you want to cook?`;
+        const data = {
+          sessionId,
+          text,
+          intentFilter,
+        };
+
+        dispatch('dialogueManager', {
+          topic,
+          data,
         });
       }
     },

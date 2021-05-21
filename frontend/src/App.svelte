@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import RecordRTC from 'recordrtc';
   import OuterRootWrapper from 'components/containers/OuterRootWrapper.svelte';
-  import { images, currRecipe, dialogueManager } from 'utils/store.js';
+  import { images } from 'utils/store.js';
 
   const ENDPOINT = 'http://0.0.0.0:3000';
   let socket = io(ENDPOINT, { reconnection: true });
@@ -23,13 +23,13 @@
 
   // Run reactive everytime when store images change
   $: {
+    intentName = null;
     setActiveImage({ obj: $images, key: 'active', value: true });
   }
 
   const setActiveImage = ({ obj, key: keyExpected, value }) => {
     Object.keys(obj).forEach((key) => {
       if (key === keyExpected && obj[key] === value) {
-        console.log('IN ACTIVE OBJECT');
         activeObject = obj;
       } else if (typeof obj[key] === 'object') {
         setActiveImage({ obj: obj[key], key: keyExpected, value });
@@ -47,7 +47,7 @@
   });
 
   socket.on('intent', (data) => {
-    console.log('SOCKET INTENT');
+    console.log('SOCKET INTENT', data);
     processIntent(data);
   });
 
@@ -83,20 +83,13 @@
         );
       }
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
 
   const processIntent = (data) => {
-    console.log(data);
     try {
-      if ($dialogueManager) {
-        $dialogueManager = false;
-        console.log('IIIIIIINNNNN ');
-        intentName = data.intent.intentName + 'Response';
-      } else {
-        intentName = data.intent.intentName;
-      }
+      intentName = data.intent.intentName;
       slots = data.slots.length ? data.slots : null;
       sessionId = data.sessionId;
     } catch (err) {
@@ -105,8 +98,8 @@
   };
 
   const handleDialogueManager = (event) => {
-    let topic = event.detail.topic;
-    let data = event.detail.data;
+    const topic = event.detail.topic;
+    const data = event.detail.data;
     socket.emit('mqttpublish', { topic, data });
   };
 
@@ -170,7 +163,7 @@
 >
   <OuterRootWrapper
     on:TTS={handleTTS}
-    on:DialogueManager={handleDialogueManager}
+    on:dialogueManager={handleDialogueManager}
     {...activeObject}
     intent={intentName}
     {sessionId}

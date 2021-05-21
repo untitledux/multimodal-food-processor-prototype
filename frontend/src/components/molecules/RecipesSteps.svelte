@@ -1,12 +1,7 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
   import Image from 'components/molecules/Image.svelte';
-  import {
-    images,
-    currRecipe,
-    currRecipeStep,
-    dialogueManager,
-  } from 'utils/store.js';
+  import { images, currRecipe, currRecipeStep } from 'utils/store.js';
   import { setActiveToFalse } from 'utils/util.js';
   export let url;
   export let id;
@@ -15,13 +10,56 @@
 
   // Make functions available in parent
   export const overlayFunctions = {
-    nextStep({ screenId, actionId, voice }) {
-      let idx = $currRecipe.steps.findIndex((obj) => obj.id === screenId);
+    nextStep({ screenId, actionId, voice, sessionId }) {
       setActiveToFalse($images, screenId);
-      $currRecipe.steps[idx + 1].active = true;
-      currRecipeStep.increment();
-      console.log('currstep', $currRecipeStep);
+      let step = false;
+      let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
+      if (!activeObj) {
+        activeObj = $images.modals.find((obj) => obj.id === actionId);
+      } else {
+        step = true;
+        currRecipeStep.increment();
+      }
+      activeObj.active = true;
       $images = $images;
+      if (voice) {
+        if (step) {
+          dispatch('TTS', {
+            text: `You are now on step ${$currRecipeStep}. ${
+              activeObj.startTTS ? activeObj.startTTS : ''
+            } `,
+          });
+        } else {
+          if (activeObj.startSession) {
+            const topic = 'hermes/dialogueManager/continueSession';
+            const intentFilter = ['AddOrContinue'];
+            let text = activeObj.startTTS;
+            let data = {
+              sessionId,
+              text,
+              intentFilter,
+            };
+
+            dispatch('dialogueManager', {
+              topic,
+              data,
+            });
+          }
+        }
+      }
+    },
+    prevStep({ screenId, actionId, voice }) {
+      let idx = $currRecipeStep;
+      setActiveToFalse($images, screenId);
+      if (idx - 2 >= 0) {
+        $currRecipe.steps[idx - 2].active = true;
+        currRecipeStep.decrement();
+      } else {
+        $currRecipe.overview[0].active = true;
+        currRecipeStep.reset();
+      }
+      $images = $images;
+
       if (voice) {
         dispatch('TTS', {
           text: `You are now on step ${$currRecipeStep + 1} of the recipe ${
@@ -30,8 +68,16 @@
         });
       }
     },
+    scale({ screenId, actionId, voice }) {
+      setActiveToFalse($images, screenId);
+      let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
+      activeObj.active = true;
+      $images = $images;
+    },
     cancelRecipe({ screenId, actionId, voice, slots, sessionId }) {
-      console.log(screenId);
+      setActiveToFalse($images, screenId);
+      let activeModal = $images.modals.find((obj) => obj.id === actionId);
+      activeModal.active = true;
       if (voice) {
         let intentFilter;
         let text;
@@ -39,12 +85,6 @@
         let data;
 
         if (!slots) {
-          setActiveToFalse($images, screenId);
-          let activeModal = $images.modals.find((obj) => obj.id === actionId);
-          activeModal.active = true;
-          $images = $images;
-          console.log('this intention has no slots');
-          $dialogueManager = true;
           topic = 'hermes/dialogueManager/continueSession';
           text = 'Do you really want to cancel the recipe?';
           intentFilter = ['CancelRecipe'];
@@ -54,39 +94,15 @@
             intentFilter,
           };
 
-          dispatch('DialogueManager', {
+          dispatch('dialogueManager', {
             topic,
             data,
           });
         } else {
-          let answer = slots[0].value.value;
-          topic = 'hermes/dialogueManager/endSession';
-          text = 'Okay';
-          setActiveToFalse($images, screenId);
-          if (answer == 'yes') {
-            text =
-              'Okay I canceled the recipe and you are now back on the menu.';
-            $images.home.active = true;
-            currRecipeStep.reset();
-            currRecipe.set(null);
-          } else {
-            $currRecipe.steps[$currRecipeStep].active = true;
-            text = 'Okay you can continue cooking';
-          }
-          console.log($images);
-          $images = $images;
-
-          data = {
-            sessionId,
-            text,
-          };
-
-          dispatch('DialogueManager', {
-            topic,
-            data,
-          });
+          console.error('Error in canceling the recipe');
         }
       }
+      $images = $images;
     },
   };
 </script>
