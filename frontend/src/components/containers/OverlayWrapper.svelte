@@ -31,7 +31,8 @@
   />
   <div
     class="scale-btn"
-    class:pointer={clickableOverlay.scale.actionId !== ''}
+    class:pointer={clickableOverlay.scale &&
+      clickableOverlay.scale.actionId !== ''}
     on:click={() =>
       handleClickOnScreen({
         screenId: id,
