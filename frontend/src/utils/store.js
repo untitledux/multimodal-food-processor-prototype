@@ -270,6 +270,7 @@ export const images = writable({
       id: 'ModalAlertSugar',
       cp: ModalRecipes,
       startSession: true,
+      intentFilter: ['AddOrContinue'],
       startTTS:
         'There is 21g less sugar than the recipe calls for. Would you like to continue with this amount, or add more?',
       active: false,

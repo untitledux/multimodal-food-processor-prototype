@@ -32,9 +32,9 @@
         } else {
           if (activeObj.startSession) {
             const topic = 'hermes/dialogueManager/continueSession';
-            const intentFilter = ['AddOrContinue'];
-            let text = activeObj.startTTS;
-            let data = {
+            const intentFilter = activeObj.intentFilter;
+            const text = activeObj.startTTS;
+            const data = {
               sessionId,
               text,
               intentFilter,

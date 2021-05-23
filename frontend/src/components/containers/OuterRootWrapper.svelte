@@ -78,8 +78,11 @@
     } catch (err) {
       console.error(err);
       dispatch('TTS', {
-        text: `I'm sorry, I can't process this command on this screen. On this screen, you can for example ask me to ${
-          TTSrecommendations ? TTSrecommendations : ''
+        text: `I'm sorry, I can't process this command on this screen. ${
+          TTSrecommendations
+            ? 'On this screen, you can for example ask me to' +
+              TTSrecommendations
+            : ''
         }`,
       });
     }
