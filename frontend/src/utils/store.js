@@ -143,113 +143,248 @@ export const images = writable({
           },
         },
       ],
-      steps: [
+      steps:[
         {
           id: 'CatalanCream_Step_1',
           cp: RecipesSteps,
-          startSession: false,
-          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_1_BawgCdKiuI.png',
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_1_BawgCdKiuI.png',
           active: false,
-          startTTS: 'Insert the double whisk attachment.',
           clickableOverlay: {
             overlay: 'clickOverlay2',
             next: {
               actionId: 'CatalanCream_Step_2',
             },
-            select: {
-              actionId: 'CatalanCream_Step_2',
-            },
-            scale: {
-              actionId: '',
-            },
-            prev: {
-              actionId: 'RecipeOverview_2P',
-            },
             cancel: {
-              actionId: 'ModalCancelRecipe',
+              actionId: 'CancelRecipe',
             },
           },
         },
         {
           id: 'CatalanCream_Step_2',
           cp: RecipesSteps,
-          startSession: false,
-          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_2_UCdSbbD1SPJ.png',
-          active: false,
-          startTTS: 'Measure out 80g of powdered sugar into the bowl.',
-          actionDone: false,
-          clickableOverlay: {
-            overlay: 'clickOverlay2',
-            next: {
-              actionId: 'ModalAlertSugar',
-            },
-            select: {
-              actionId: 'ModalAlertSugar',
-            },
-            scale: {
-              actionId: 'CatalanCream_Step_2_Green_Signal',
-            },
-            prev: {
-              actionId: 'CatalanCream_Step_1',
-            },
-            cancel: {
-              actionId: 'ModalCancelRecipe',
-            },
-          },
-        },
-        {
-          id: 'CatalanCream_Step_2_Green_Signal',
-          cp: RecipesSteps,
-          startSession: false,
-          url: 'https://ik.imagekit.io/nuicookit/GREEN_SIGNAL_RIGHT_AMOUNT_KFWJt5Rbq.png',
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_2_UCdSbbD1SPJ.png',
           active: false,
           clickableOverlay: {
             overlay: 'clickOverlay2',
             next: {
               actionId: 'CatalanCream_Step_3',
             },
-            select: {
-              actionId: 'CatalanCream_Step_3',
-            },
-            scale: {
-              actionId: '',
-            },
-            prev: {
-              actionId: 'CatalanCream_Step_1',
-            },
             cancel: {
-              actionId: 'ModalCancelRecipe',
+              actionId: 'CancelRecipe',
             },
           },
         },
         {
           id: 'CatalanCream_Step_3',
           cp: RecipesSteps,
-          startSession: false,
-          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_3_eBKO6neu5.png',
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_2_1_aJTdx7rtME7_.png',
           active: false,
-          startTTS: 'Add 4 egg yolks.',
-          actionDone: false,
           clickableOverlay: {
             overlay: 'clickOverlay2',
             next: {
               actionId: 'CatalanCream_Step_4',
             },
-            select: {
-              actionId: 'CatalanCream_Step_4',
-            },
-            scale: {
-              actionId: '',
-            },
-            prev: {
-              actionId: 'CatalanCream_Step_2',
-            },
             cancel: {
-              actionId: 'ModalCancelRecipe',
+              actionId: 'CancelRecipe',
             },
           },
         },
-      ],
+        {
+          id: 'CatalanCream_Step_4',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_2_1_sucess_4KHrLL2WDT.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_5',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_5',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_3_OPhF79UEn3.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_6',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_6',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_4_pBA3js3dRKbU.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_7',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_7',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_5_ziVjFaGrWi.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_8',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_8',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_6_aWtna9V_eh.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_9',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_9',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_7_7FXqV6EKAN9V.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_10',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_10',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_8_I2TosV5pHX.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_11',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_11',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_9_7EJNkoHqOKFr.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_12',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_12',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_10_6_oGwq1z5O.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_13',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_13',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_11_R_-FXXTYYPZB.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_14',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_14',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_12_lE5WtcNWef-G.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_15',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_15',
+          cp: RecipesSteps,
+          url:
+            'https://ik.imagekit.io/nuicookit/RECIPE_STEP_13_DNrsswzHru.png',
+          active: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream',
+            },
+            cancel: {
+              actionId: 'CancelRecipe',
+            },
+          },
+        },
+      ]
     },
   ],
   modals: [
