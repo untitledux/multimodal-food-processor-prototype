@@ -62,6 +62,14 @@ mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', (err) => {
   }
 });
 
+mqtt_client.subscribe('hermes/dialogueManager/sessionEnded', (err) => {
+  if (!err) {
+    console.log(`subscribe to MQTT session ended`);
+  } else {
+    console.log(err);
+  }
+});
+
 // When subscribed topic is published  - you get message here
 mqtt_client.on('message', (topic, message) => {
   console.log('topic: ' + topic);
@@ -77,6 +85,17 @@ mqtt_client.on('message', (topic, message) => {
         console.log('audio write success');
       }
     });
+  } else if (topic.indexOf('hermes/dialogueManager/sessionEnded') == 0) {
+    let intentJSON = JSON.parse(message);
+    let reason = intentJSON.termination.reason;
+    if(reason.indexOf('intentNotRecognized')==0){
+      const response = 'I didn\'t get that. Could you try again?';
+      sendTTS(response);
+      
+      // wake up manually
+      const msg = '{"modelId": "default", "modelVersion": "", "modelType": "personal", "currentSensitivity": 1.0, "siteId": "default", "sessionId": null, "sendAudioCaptured": null, "lang": null, "customEntities": null}';
+      setTimeout(() => mqtt_client.publish('hermes/hotword/default/detected', msg), 3000);
+    }
   }
 });
 
