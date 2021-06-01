@@ -256,7 +256,8 @@ export const images = writable({
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_4_pBA3js3dRKbU.png',
           active: false,
-          startTTS: 'Shut the lid, insert the measuring cup into the lid, and mix all ingredients together.',
+          startTTS:
+            'Shut the lid, insert the measuring cup into the lid, and mix all ingredients together.',
           actionDone: false,
           clickableOverlay: {
             overlay: 'clickOverlay2',
@@ -337,7 +338,8 @@ export const images = writable({
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_7_7FXqV6EKAN9V.png',
           active: false,
-          startTTS: 'Remove the measuring cup from the lid. Make sure the lid is shut and mix the ingredients together again.',
+          startTTS:
+            'Remove the measuring cup from the lid. Make sure the lid is shut and mix the ingredients together again.',
           actionDone: false,
           clickableOverlay: {
             overlay: 'clickOverlay2',
@@ -439,14 +441,15 @@ export const images = writable({
             },
           },
         },
-       
+
         {
           id: 'CatalanCream_Step_11',
           cp: RecipesSteps,
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_11_R_-FXXTYYPZB.png',
           active: false,
-          startTTS: 'Cooling is done. Time to get your Catalan Creme out of the Refrigerator. ',
+          startTTS:
+            'Cooling is done. Time to get your Catalan Creme out of the Refrigerator. ',
           actionDone: false,
           clickableOverlay: {
             overlay: 'clickOverlay2',
@@ -467,14 +470,15 @@ export const images = writable({
             },
           },
         },
-        
+
         {
           id: 'CatalanCream_Step_12',
           cp: RecipesSteps,
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_12_lE5WtcNWef-G.png',
           active: false,
-          startTTS: 'Sprinkle around 1 tbsp brown sugar onto the cream. Caramelize the sugar with the culinary torch and enjoy!',
+          startTTS:
+            'Sprinkle around 1 tbsp brown sugar onto the cream. Caramelize the sugar with the culinary torch and enjoy!',
           actionDone: false,
           clickableOverlay: {
             overlay: 'clickOverlay2',
@@ -493,13 +497,13 @@ export const images = writable({
             cancel: {
               actionId: 'ModalCancelRecipe',
             },
-        },
+          },
         },
         {
           id: 'CatalanCream_Step_13',
           cp: RecipesSteps,
           startSession: false,
-          url: 'hhttps://ik.imagekit.io/nuicookit/RECIPE_STEP_13_DNrsswzHru.png',
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_13_DNrsswzHru.png',
           active: false,
           startTTS: 'Enjoy!',
           actionDone: false,
@@ -520,7 +524,7 @@ export const images = writable({
             cancel: {
               actionId: 'ModalCancelRecipe',
             },
-        },
+          },
         },
       ],
     },
