@@ -30,7 +30,7 @@
 
       if (voice) {
         const topic = 'hermes/dialogueManager/continueSession';
-        const intentFilter = ['Portions'];
+        const intentFilter = ['SetPortions'];
         const text = `You are now on the ${rawSlot} recipe. How many portions do you want to cook?`;
         const data = {
           sessionId,

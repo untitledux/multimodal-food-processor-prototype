@@ -82,6 +82,7 @@
             text = 'Ok you can add more by clicking on the scale';
             break;
           case 'next':
+          case 'go on':
           case 'continue':
             currRecipeStep.increment();
             let activeObj = $currRecipe.steps[$currRecipeStep - 1];
@@ -108,6 +109,7 @@
       } else {
         let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
         let idx = $currRecipe.steps.findIndex((obj) => obj.id === actionId);
+        console.log(idx);
         idx + 1 !== $currRecipeStep ? currRecipeStep.increment() : null;
         activeObj.active = true;
         $images = $images;

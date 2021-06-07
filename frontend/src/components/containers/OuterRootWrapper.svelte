@@ -42,7 +42,7 @@
             voice: true,
           });
           break;
-        case 'PrevStep':
+        case 'PreviousStep':
           overlayFunctions.prevStep({
             screenId: id,
             actionId: clickableOverlay.prev.actionId,
@@ -58,7 +58,7 @@
             voice: true,
           });
           break;
-        case 'Portions':
+        case 'SetPortions':
           overlayFunctions.addPortion({
             screenId: id,
             slots,
@@ -66,7 +66,7 @@
             voice: true,
           });
           break;
-        case 'AddOrContinue':
+        case 'ReactionToDisplay':
           overlayFunctions.addOrContinue({
             screenId: id,
             sessionId,
@@ -74,20 +74,50 @@
             voice: true,
           });
           break;
+        case 'GetDuration':
+          overlayFunctions.getDuration({
+            screenId: id,
+            sessionId,
+            slots,
+            voice: true,
+          });
+          break;
+        case 'RepeatExplanation':
+          overlayFunctions.repeatExplanation({
+            screenId: id,
+            sessionId,
+            slots,
+            voice: true,
+          });
+          break;
+        case 'SkipStep':
+          overlayFunctions.nextStep({
+            screenId: id,
+            sessionId,
+            skip: true,
+            actionId: clickableOverlay.next.actionId,
+            voice: true,
+          });
+          break;
+        default:
+          handleTTSRecommendations();
+          break;
       }
     } catch (err) {
       console.error(err);
-      dispatch('TTS', {
-        text: `I'm sorry, I can't process this command on this screen. ${
-          TTSrecommendations
-            ? 'On this screen, you can for example ask me to' +
-              TTSrecommendations
-            : ''
-        }`,
-      });
+      handleTTSRecommendations();
     }
   }
 
+  const handleTTSRecommendations = () => {
+    dispatch('TTS', {
+      text: `I'm sorry, I can't process this command on this screen. ${
+        TTSrecommendations
+          ? 'On this screen, you can for example ask me to' + TTSrecommendations
+          : ''
+      }`,
+    });
+  };
   //call function in child compoenent
   const handleClickOnScreen = (event) => {
     let { screenId, func, actionId } = event.detail;

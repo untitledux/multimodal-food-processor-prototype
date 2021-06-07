@@ -8,9 +8,11 @@
 
   const dispatch = createEventDispatcher();
 
+  $: console.log('currStep', $currRecipeStep);
+
   // Make functions available in parent
   export const overlayFunctions = {
-    nextStep({ screenId, actionId, voice, sessionId }) {
+    nextStep({ screenId, actionId, voice, sessionId, skip }) {
       setActiveToFalse($images, screenId);
       let step = false;
       let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
@@ -24,10 +26,12 @@
       $images = $images;
       if (voice) {
         if (step) {
-          //removed the You are now on step ${$currRecipeStep}.
-          dispatch('TTS', {
-            text: `${activeObj.startTTS ? activeObj.startTTS : ''} `,
-          });
+          let text = activeObj.startTTS ? activeObj.startTTS : '';
+          if (skip) {
+            text =
+              'Ok, I skipped this step, now you have to ' + activeObj.startTTS;
+          }
+          dispatch('TTS', { text });
         } else {
           if (activeObj.startSession) {
             const topic = 'hermes/dialogueManager/continueSession';
@@ -72,6 +76,12 @@
       let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
       activeObj.active = true;
       $images = $images;
+    },
+    repeatExplanation({ screenId }) {
+      let activeObj = $currRecipe.steps.find((obj) => obj.id === screenId);
+      dispatch('TTS', {
+        text: `${activeObj.startTTS}`,
+      });
     },
     cancelRecipe({ screenId, actionId, voice, slots, sessionId }) {
       setActiveToFalse($images, screenId);

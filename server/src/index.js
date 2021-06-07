@@ -88,8 +88,8 @@ mqtt_client.on('message', (topic, message) => {
   } else if (topic.indexOf('hermes/dialogueManager/sessionEnded') == 0) {
     let intentJSON = JSON.parse(message);
     let reason = intentJSON.termination.reason;
-    if(reason.indexOf('intentNotRecognized')==0){
-      const response = 'I didn\'t get that. Could you try again?';
+    if(reason.indexOf('intentNotRecognized') === 0){
+      const response = `I didn't get that. Could you try again?`;
       sendTTS(response);
       
       // wake up manually

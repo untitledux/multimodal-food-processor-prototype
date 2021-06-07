@@ -83,6 +83,12 @@
         $images = $images;
       }
     },
+    getDuration({ screenId, actionId, voice, slots, sessionId }) {
+      console.log($currRecipe);
+      dispatch('TTS', {
+        text: `The cooking time is ${$currRecipe.overview[0].TTSDuration}`,
+      });
+    },
     cancelRecipe({ screenId, actionId, voice, slots, sessionId }) {
       if (voice) {
         let intentFilter;

@@ -29,6 +29,7 @@ export const images = writable({
         {
           id: 'RecipeOverview_2P',
           cp: RecipesWrapper,
+          TTSDuration: '2 hours 25minutes',
           TTSrecommendations: 'start the recipe or to adjust the portions',
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/2_PORTION_SCREEN_6WYr3CD1c_C.png',
@@ -59,6 +60,7 @@ export const images = writable({
           id: 'RecipeOverview_3P',
           cp: RecipesWrapper,
           TTSrecommendations: 'start the recipe or to adjust the portions',
+          TTSDuration: '2 hours 25minutes',
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/3_PORTION_SCREEN_1__q643ODANEfg.png',
           active: false,
@@ -91,6 +93,7 @@ export const images = writable({
           active: false,
           startSession: false,
           TTSrecommendations: 'start the recipe or to adjust the portions',
+          TTSDuration: '2 hours 25minutes',
           clickableOverlay: {
             overlay: 'clickOverlay3',
             select: {
@@ -117,6 +120,7 @@ export const images = writable({
           id: 'RecipeOverview_5P',
           cp: RecipesWrapper,
           startSession: false,
+          TTSDuration: '2 hours 25minutes',
           TTSrecommendations: 'start the recipe or to adjust the portions',
           url: 'https://ik.imagekit.io/nuicookit/5_PORTION_SCREEN_wIRz3xylH.png',
           active: false,
@@ -203,7 +207,7 @@ export const images = writable({
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/GREEN_SIGNAL_RIGHT_AMOUNT_KFWJt5Rbq.png',
           active: false,
-          startTTS: 'Thats the right amount! Do you wanna go on with Step 4?',
+          startTTS: 'Weigh out 80g of powdered sugar into the bowl',
           clickableOverlay: {
             overlay: 'clickOverlay2',
             next: {
@@ -547,7 +551,7 @@ export const images = writable({
       id: 'ModalAlertSugar',
       cp: ModalRecipes,
       startSession: true,
-      intentFilter: ['AddOrContinue'],
+      intentFilter: ['ReactionToDisplay'],
       startTTS:
         'There is 21g less sugar than the recipe calls for. Would you like to continue with this amount, or add more?',
       active: false,
