@@ -24,10 +24,9 @@
       $images = $images;
       if (voice) {
         if (step) {
+          //removed the You are now on step ${$currRecipeStep}.
           dispatch('TTS', {
-            text: `You are now on step ${$currRecipeStep}. ${
-              activeObj.startTTS ? activeObj.startTTS : ''
-            } `,
+            text: `${activeObj.startTTS ? activeObj.startTTS : ''} `,
           });
         } else {
           if (activeObj.startSession) {

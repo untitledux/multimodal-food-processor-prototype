@@ -123,6 +123,7 @@ io.on('connection', (client) => {
     // pipe the filename to the stream
     stream.pipe(fs.createWriteStream(filename));
     stream.on('data', (chunk) => {
+      // console.log(chunk);
       mqtt_client.publish('hermes/audioServer/default/audioFrame', chunk);
     });
     stream.on('end', () => {

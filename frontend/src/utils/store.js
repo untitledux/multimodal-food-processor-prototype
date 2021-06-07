@@ -203,6 +203,7 @@ export const images = writable({
           startSession: false,
           url: 'https://ik.imagekit.io/nuicookit/GREEN_SIGNAL_RIGHT_AMOUNT_KFWJt5Rbq.png',
           active: false,
+          startTTS: 'Thats the right amount! Do you wanna go on with Step 4?',
           clickableOverlay: {
             overlay: 'clickOverlay2',
             next: {
@@ -243,6 +244,282 @@ export const images = writable({
             },
             prev: {
               actionId: 'CatalanCream_Step_2',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_4',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_4_pBA3js3dRKbU.png',
+          active: false,
+          startTTS:
+            'Shut the lid, insert the measuring cup into the lid, and mix all ingredients together.',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_5',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_5',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_3',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_5',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_5_ziVjFaGrWi.png',
+          active: false,
+          startTTS: 'Measure out 20g of cornstarch into the bowl. ',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_6',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_6',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_4',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_6',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_6_aWtna9V_eh.png',
+          active: false,
+          startTTS: 'Close the lid and mix ingredients again.',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_7',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_7',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_5',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_7',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_7_7FXqV6EKAN9V.png',
+          active: false,
+          startTTS:
+            'Remove the measuring cup from the lid. Make sure the lid is shut and mix the ingredients together again.',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_8',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_8',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_6',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_8',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_8_I2TosV5pHX.png',
+          active: false,
+          startTTS: 'Cook the Catalan Cream.',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_9',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_9',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_7',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_9',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_9_7EJNkoHqOKFr.png',
+          active: false,
+          startTTS: 'Remove the double whisk attachment.',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_10',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_10',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_8',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_10',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_10_6_oGwq1z5O.png',
+          active: false,
+          startTTS: 'Pour the cream into the ramekins and cool for two hours.',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_11',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_11',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_9',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+
+        {
+          id: 'CatalanCream_Step_11',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_11_R_-FXXTYYPZB.png',
+          active: false,
+          startTTS:
+            'Cooling is done. Time to get your Catalan Creme out of the Refrigerator. ',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_12',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_12',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_10',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+
+        {
+          id: 'CatalanCream_Step_12',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_12_lE5WtcNWef-G.png',
+          active: false,
+          startTTS:
+            'Sprinkle around 1 tbsp brown sugar onto the cream. Caramelize the sugar with the culinary torch and enjoy!',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: 'CatalanCream_Step_13',
+            },
+            select: {
+              actionId: 'CatalanCream_Step_13',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: 'CatalanCream_Step_11',
+            },
+            cancel: {
+              actionId: 'ModalCancelRecipe',
+            },
+          },
+        },
+        {
+          id: 'CatalanCream_Step_13',
+          cp: RecipesSteps,
+          startSession: false,
+          url: 'https://ik.imagekit.io/nuicookit/RECIPE_STEP_13_DNrsswzHru.png',
+          active: false,
+          startTTS: 'Enjoy!',
+          actionDone: false,
+          clickableOverlay: {
+            overlay: 'clickOverlay2',
+            next: {
+              actionId: '',
+            },
+            select: {
+              actionId: '',
+            },
+            scale: {
+              actionId: '',
+            },
+            prev: {
+              actionId: '',
             },
             cancel: {
               actionId: 'ModalCancelRecipe',
