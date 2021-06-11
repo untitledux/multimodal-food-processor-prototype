@@ -7,9 +7,6 @@
   export let id;
 
   const dispatch = createEventDispatcher();
-
-  $: console.log('currStep', $currRecipeStep);
-
   // Make functions available in parent
   export const overlayFunctions = {
     nextStep({ screenId, actionId, voice, sessionId, skip }) {

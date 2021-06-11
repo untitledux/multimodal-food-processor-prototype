@@ -1,4 +1,5 @@
 ## intent:SelectRecipe
+
 - select [catalan cream](recipe) recipe
 - select [chicken curry](recipe) recipe
 - lets try [catalan cream](recipe)
@@ -9,6 +10,7 @@
 - i want to cook the [chicken curry](recipe)
 
 ## intent:FindRecipes
+
 - can you show [favorite](recipe_type) recipes
 - can you show [all](recipe_type) recipes
 - can you show [best rated](recipe_type) recipes
@@ -70,6 +72,7 @@
 - i wanna eat [tuna](ingredient) show recipes
 
 ## intent:SortRecipes
+
 - could you sort the recipes by [rating](recipe_category) please
 - could you sort the recipes by [cooking time](recipe_category) please
 - could you sort the recipes by [preparation time](recipe_category) please
@@ -86,6 +89,7 @@
 - sort recipes by [calories](recipe_category)
 
 ## intent:AddToFavorites
+
 - can you add [this](recipe) recipe to my list of favorites
 - add [catalan cream](recipe) to favorites
 - add [chicken curry](recipe) to favorites
@@ -93,6 +97,7 @@
 - mark [chicken curry](recipe) as favorite
 
 ## intent:RequestRecipeVariant
+
 - is there also a [non vegetarian](recipe_type) variant of the recipe
 - is there also a [vegan](recipe_type) variant of the recipe
 - is there also a [vegetarian](recipe_type) variant of the recipe
@@ -107,12 +112,14 @@
 - what about the [vegetarian](recipe_type) variant
 
 ## intent:CancelRecipe
+
 - i want to see other recipes
 - cancel the current recipe
 - please cancel the recipe
 - break the recipe
 
 ## intent:StartRecipe
+
 - lets start with preparation of [catalan cream](recipe)
 - lets start with preparation of [chicken curry](recipe)
 - lets initiate the [catalan cream](recipe) recipe
@@ -121,6 +128,7 @@
 - start recipe
 
 ## intent:GetFunctionHelp
+
 - how to [chop](function_name)
 - how to [rasp](function_name)
 - how to [slice](function_name)
@@ -209,6 +217,7 @@
 - i need more information on [roasting](function_name)
 
 ## intent:NextStep
+
 - navigate to the next step
 - i am done next step please
 - what should i do next
@@ -218,6 +227,7 @@
 - continue
 
 ## intent:PreviousStep
+
 - move back to previous step
 - previous step
 - show last step please
@@ -227,12 +237,14 @@
 - take a step back
 
 ## intent:SkipStep
+
 - lets skip this step for now
 - you can skip this step
 - i dont want to do this
 - lets skip that step
 
 ## intent:RepeatExplanation
+
 - repeat please
 - didnt get please repeat
 - can you repeat the instruction please
@@ -240,6 +252,7 @@
 - read again
 
 ## intent:SkipIngredient
+
 - lets go on without [onion](ingredient)
 - lets go on without [carrot](ingredient)
 - lets go on without [potato](ingredient)
@@ -273,6 +286,7 @@
 - please disregard [onions](ingredient)
 
 ## intent:RequestAlternativeIngredient
+
 - i dont have [onion](ingredient) can i substitute anything
 - i dont have [carrot](ingredient) can i substitute anything
 - i dont have [potato](ingredient) can i substitute anything
@@ -290,6 +304,7 @@
 - how can i substitute [potato](ingredient)
 
 ## intent:SetPortions
+
 - lets make [two](amount) portions
 - lets make [three](amount) portions
 - lets make [four](amount) portions
@@ -334,6 +349,7 @@
 - set number of portions to [eight](amount)
 
 ## intent:ShowRecipeStepOverview
+
 - give me an overview of all steps
 - give me recipe overview
 - go to the recipe overview
@@ -343,6 +359,7 @@
 - show the whole recipe
 
 ## intent:RequestPreparationAlternatives
+
 - the tool is broken what can i do
 - what if i have lost the tool
 - can i proceed without the double whisk attachment
@@ -350,6 +367,7 @@
 - how to go on with the step without the tool
 
 ## intent:SetDisplayBrightness
+
 - set screen brightness to [zero percent](brightness)
 - set screen brightness to [thirty percent](brightness)
 - set screen brightness to [fifty percent](brightness)
@@ -368,6 +386,7 @@
 - lets put brightness on [seventy percent](brightness)
 
 ## intent:IncreaseDisplayBrightness
+
 - make the screen a little brighter please
 - increase the brightness of the screen to [thirty](brightness)
 - increase the brightness of the screen to [fifty percent](brightness)
@@ -383,6 +402,7 @@
 - make the display brighter please
 
 ## intent:DecreaseDisplayBrightness
+
 - could we make the display a bit darker
 - decrease the brightness of the screen to [zero percent](brightness)
 - decrease the brightness of the screen to [thirty percent](brightness)
@@ -400,6 +420,7 @@
 - lets decrease the screen brightness
 
 ## intent:GetTemperature
+
 - tell the current temperature
 - how hot is the food
 - how cold is the food
@@ -407,6 +428,7 @@
 - temperature please
 
 ## intent:SetProcessTime
+
 - set the time to [ten seconds](duration)
 - set the time to [twenty seconds](duration)
 - set the time to [thirty seconds](duration)
@@ -441,6 +463,7 @@
 - set a processing time of [five minutes](duration)
 
 ## intent:IncreaseProcessDuration
+
 - add [ten seconds](duration) more
 - add [twenty seconds](duration) more
 - add [thirty seconds](duration) more
@@ -469,6 +492,7 @@
 - increase by [five minutes](duration)
 
 ## intent:DecreaseProcessDuration
+
 - please mix [ten seconds](duration) less
 - please mix [twenty seconds](duration) less
 - please mix [thirty seconds](duration) less
@@ -504,6 +528,7 @@
 - let it last [five minutes](duration) shorter
 
 ## intent:ChangeSpeed
+
 - can you please mix [faster](speed_action)
 - can you please mix [more slowly](speed_action)
 - can you please stir [faster](speed_action)
@@ -565,6 +590,7 @@
 - can you mix at level [sixteen](speed_level) please
 
 ## intent:ChangeLanguage
+
 - could you please talk [english](new_language)
 - could you please talk [german](new_language)
 - could you please talk [french](new_language)
@@ -591,12 +617,14 @@
 - are you able to speak in [french](new_language) as well
 
 ## intent:PowerOff
+
 - power off now
 - see you next time
 - thank you good bye
 - turn off the power
 
 ## intent:GetDuration
+
 - how long will you need
 - how long we need to finish [recipe](recipe_entity)
 - how long we need to finish [current step](recipe_entity)
@@ -613,6 +641,7 @@
 - tell the remaining time please
 
 ## intent:GetAmountOfIngredient
+
 - how many [teaspoons](unit) of [cinnamon powder](ingredient_name) are needed for the recipe
 - how many [teaspoons](unit) of [icing sugar](ingredient_name) are needed for the recipe
 - how many [teaspoons](unit) of [powdered sugar](ingredient_name) are needed for the recipe
@@ -654,6 +683,7 @@
 - how many [liter](unit) again
 
 ## intent:ShowToolPicture
+
 - i want a pic of the [twin beater](tool) please
 - i want a pic of the [stirrer](tool) please
 - i want a pic of the [steamer](tool) please
@@ -679,6 +709,7 @@
 - i cant imagine how the tool looks like
 
 ## intent:ResetScale
+
 - please tare the scale
 - can you tare the scale
 - i want a scale reset
@@ -686,6 +717,7 @@
 - reset the scale for me
 
 ## intent:ReactionToDisplay
+
 - i want to [add more](reaction) please
 - i want to [continue](reaction) please
 - i want to [go on](reaction) please
@@ -700,6 +732,7 @@
 - [go on](reaction)
 
 ## intent:Refuse
+
 - no thanks
 - please no
 - refuse that
@@ -710,6 +743,7 @@
 - what about no
 
 ## intent:Confirm
+
 - yes please
 - yeah
 - yup
@@ -720,6 +754,7 @@
 - okey doke
 
 ## intent:RequestFeedback
+
 - what to do if the [onions are burnt](feedback_topic)
 - what should i do when the [water is boiling](feedback_topic)
 - what to do if the [scale does not react](feedback_topic)
@@ -728,6 +763,7 @@
 - what should i do when the [cheese doesnt melt](feedback_topic)
 
 ## intent:StartProcess
+
 - please initiate the [chopping](process_name)
 - please initiate the [rasping](process_name)
 - please initiate the [slicing](process_name)
@@ -847,6 +883,7 @@
 - start it
 
 ## intent:StopProcess
+
 - stop now the food is burning
 - how could you burn the food please stop
 - stop right now
@@ -896,6 +933,7 @@
 - can you please stop [roasting](process_name)
 
 ## intent:IncreaseSoundvolume
+
 - can you speak up a little bit please
 - could you speak louder please
 - its not loud enough
@@ -906,6 +944,7 @@
 - your voice is too softly speak louder
 
 ## intent:DecreaseSoundvolume
+
 - don't yell at me
 - please speak a bit quieter
 - can you please keep your voice down
@@ -914,4 +953,3 @@
 - lower your voice you are too loud
 - lower volume please
 - could you keep your voice down please
-

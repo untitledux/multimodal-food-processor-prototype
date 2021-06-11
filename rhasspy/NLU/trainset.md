@@ -1,4 +1,5 @@
 ## intent:SelectRecipe
+
 - i want to prepare [catalan cream](recipe)
 - i want to prepare [chicken curry](recipe)
 - lets prepare the [catalan cream](recipe)
@@ -13,6 +14,7 @@
 - i want to cook [this](recipe) can you start it
 
 ## intent:FindRecipes
+
 - could you please list [healthy](recipe_type) recipes
 - could you please list [vegan](recipe_type) recipes
 - could you please list [vegetarian](recipe_type) recipes
@@ -140,6 +142,7 @@
 - i want to eat something with [tuna](ingredient)
 
 ## intent:SortRecipes
+
 - can you sort the recipes by [rating](recipe_category)
 - can you sort the recipes by [cooking time](recipe_category)
 - can you sort the recipes by [preparation time](recipe_category)
@@ -177,6 +180,7 @@
 - sort by [calories](recipe_category) please
 
 ## intent:AddToFavorites
+
 - can you save [this](recipe) recipe under favorites please
 - can you mark [this](recipe) recipe as favorite
 - can you add [catalan cream](recipe) to my favorites please
@@ -198,6 +202,7 @@
 - please mark [chicken curry](recipe) as favorite
 
 ## intent:RequestRecipeVariant
+
 - how does the [non vegetarian](recipe_type) version of the recipe look like
 - how does the [vegan](recipe_type) version of the recipe look like
 - how does the [vegetarian](recipe_type) version of the recipe look like
@@ -238,6 +243,7 @@
 - can i do that [without meat](recipe_type)
 
 ## intent:CancelRecipe
+
 - i want to use another recipe
 - could you cancel the recipe
 - cancel this recipe please
@@ -251,6 +257,7 @@
 - cancel recipe
 
 ## intent:StartRecipe
+
 - please start with the preparation of the [catalan cream](recipe)
 - please start with the preparation of the [chicken curry](recipe)
 - start the [catalan cream](recipe) please
@@ -266,6 +273,7 @@
 - okay start
 
 ## intent:GetFunctionHelp
+
 - what should i take into account when using the [scaling](function_name) function
 - what should i take into account when using the [chopping](function_name) function
 - what should i take into account when using the [rasping](function_name) function
@@ -564,6 +572,7 @@
 - what i need for [roasting](function_name)
 
 ## intent:NextStep
+
 - go to the next step on the recipe
 - go to next step on the recipe
 - lets go to the next step
@@ -593,6 +602,7 @@
 - done
 
 ## intent:PreviousStep
+
 - can you please show me the previous step
 - can you go to the previous step please
 - could you show the previous step
@@ -611,6 +621,7 @@
 - step back
 
 ## intent:SkipStep
+
 - trust me we dont have to do this
 - please skip the current step
 - can we skip this step please
@@ -623,6 +634,7 @@
 - skip step
 
 ## intent:RepeatExplanation
+
 - could you repeat the last step please
 - could you repeat the last step
 - could you repeat last step please
@@ -646,6 +658,7 @@
 - pardon
 
 ## intent:SkipIngredient
+
 - i would like to omit the [onion](ingredient)
 - i would like to omit the [carrot](ingredient)
 - i would like to omit the [potato](ingredient)
@@ -728,6 +741,7 @@
 - i dont want that ingredient
 
 ## intent:RequestAlternativeIngredient
+
 - i do not have [onion](ingredient) can i substitute anything
 - i do not have [carrot](ingredient) can i substitute anything
 - i do not have [potato](ingredient) can i substitute anything
@@ -786,6 +800,7 @@
 - alternatives for [potato](ingredient)
 
 ## intent:SetPortions
+
 - select [two](amount) portions please
 - select [two](amount) portions
 - select [three](amount) portions please
@@ -977,6 +992,7 @@
 - we are [eight](amount)
 
 ## intent:ShowRecipeStepOverview
+
 - please give me an overview of all remaining steps
 - i would like to see the whole recipe
 - can i see the whole recipe again
@@ -997,6 +1013,7 @@
 - tell me the next steps please
 
 ## intent:RequestPreparationAlternatives
+
 - can you show me an alternative preparation method
 - i cant find the tool anymore how can i go on
 - can i also cut the ingredients manually
@@ -1016,6 +1033,7 @@
 - can i use another tool for this step
 
 ## intent:SetDisplayBrightness
+
 - can we put display brightness on [zero percent](brightness)
 - can we put display brightness on [thirty percent](brightness)
 - can we put display brightness on [fifty percent](brightness)
@@ -1050,6 +1068,7 @@
 - put brightness on [seventy percent](brightness)
 
 ## intent:IncreaseDisplayBrightness
+
 - can you increase the brightness of the screen to [thirty](brightness)
 - can you increase the brightness of the screen to [fifty percent](brightness)
 - can you increase the brightness of the screen to [seventy percent](brightness)
@@ -1086,6 +1105,7 @@
 - brighter
 
 ## intent:DecreaseDisplayBrightness
+
 - can you decrease the brightness of the screen to [zero percent](brightness)
 - can you decrease the brightness of the screen to [thirty percent](brightness)
 - can you decrease the brightness of the screen to [fifty percent](brightness)
@@ -1123,6 +1143,7 @@
 - darker
 
 ## intent:GetTemperature
+
 - tell me the temperature
 - current temperature
 - please temperature
@@ -1137,6 +1158,7 @@
 - communicate temperature
 
 ## intent:SetProcessTime
+
 - adjust time to [ten seconds](duration) please
 - adjust time to [twenty seconds](duration) please
 - adjust time to [thirty seconds](duration) please
@@ -1187,6 +1209,7 @@
 - process it for [five minutes](duration) please
 
 ## intent:IncreaseProcessDuration
+
 - [ten seconds](duration) longer please
 - [twenty seconds](duration) longer please
 - [thirty seconds](duration) longer please
@@ -1245,6 +1268,7 @@
 - add [five minutes](duration)
 
 ## intent:DecreaseProcessDuration
+
 - [ten seconds](duration) shorter please
 - [twenty seconds](duration) shorter please
 - [thirty seconds](duration) shorter please
@@ -1319,6 +1343,7 @@
 - reduce by [five minutes](duration)
 
 ## intent:ChangeSpeed
+
 - mix it [faster](speed_action)
 - mix it [more slowly](speed_action)
 - stir it [faster](speed_action)
@@ -1413,6 +1438,7 @@
 - set the speed level to [minimum](speed_level)
 
 ## intent:ChangeLanguage
+
 - change language from [english](old_language) to [german](new_language)
 - change language from [english](old_language) to [french](new_language)
 - change from [english](old_language) to [german](new_language)
@@ -1487,6 +1513,7 @@
 - talk [french](new_language)
 
 ## intent:PowerOff
+
 - thank you see you next time
 - you are released from work
 - switch off
@@ -1500,6 +1527,7 @@
 - good bye
 
 ## intent:GetDuration
+
 - how long do we still need
 - when is the [recipe](recipe_entity) finished
 - when is the [current step](recipe_entity) finished
@@ -1538,6 +1566,7 @@
 - when will you be finished
 
 ## intent:GetAmountOfIngredient
+
 - can you tell me how many [teaspoons](unit) of [cinnamon powder](ingredient_name) we need for the recipe
 - can you tell me how many [teaspoons](unit) of [icing sugar](ingredient_name) we need for the recipe
 - can you tell me how many [teaspoons](unit) of [powdered sugar](ingredient_name) we need for the recipe
@@ -1632,6 +1661,7 @@
 - how much [brown sugar](ingredient_name) do we need
 
 ## intent:ShowToolPicture
+
 - can you show me a picture of the tool we need now
 - which one was the [twin beater](tool) show me a picture
 - which one was the [stirrer](tool) show me a picture
@@ -1673,6 +1703,7 @@
 - which tool now
 
 ## intent:ResetScale
+
 - please set the scale to zero
 - set the scale to zero please
 - set scale to zero please
@@ -1691,6 +1722,7 @@
 - scale tare
 
 ## intent:ReactionToDisplay
+
 - i want to [add more](reaction)
 - i want to [continue](reaction)
 - i want to [go on](reaction)
@@ -1705,6 +1737,7 @@
 - [go on](reaction) please
 
 ## intent:Refuse
+
 - no
 - how about no
 - no way
@@ -1717,6 +1750,7 @@
 - no i dont want to quit
 
 ## intent:Confirm
+
 - that would be fine
 - please confirm
 - yes thats ok
@@ -1735,6 +1769,7 @@
 - yes
 
 ## intent:RequestFeedback
+
 - inform me if there is [enough milk](feedback_topic)
 - should i add more milk
 - is it [enough milk](feedback_topic)
@@ -1752,6 +1787,7 @@
 - how to proceed
 
 ## intent:StartProcess
+
 - start the [chopping](process_name) process
 - start the [rasping](process_name) process
 - start the [slicing](process_name) process
@@ -1911,6 +1947,7 @@
 - start
 
 ## intent:StopProcess
+
 - you burned the food please stop
 - what are you doing please stop
 - stop with [chopping](process_name)
@@ -2032,6 +2069,7 @@
 - stop
 
 ## intent:IncreaseSoundvolume
+
 - please speak up i can't understand you
 - could you speak up a little bit
 - speak up a little bit
@@ -2056,6 +2094,7 @@
 - adjust your voice i can not understand you
 
 ## intent:DecreaseSoundvolume
+
 - please speak a little quieter
 - you are talking too loud
 - speak a little quieter
@@ -2079,4 +2118,3 @@
 - your voice keep it down
 - lower your voice
 - lower the volume
-

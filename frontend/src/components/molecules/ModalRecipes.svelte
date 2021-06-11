@@ -109,7 +109,6 @@
       } else {
         let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
         let idx = $currRecipe.steps.findIndex((obj) => obj.id === actionId);
-        console.log(idx);
         idx + 1 !== $currRecipeStep ? currRecipeStep.increment() : null;
         activeObj.active = true;
         $images = $images;

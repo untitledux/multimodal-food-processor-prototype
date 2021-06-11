@@ -8,13 +8,16 @@
     "system": "rhasspy"
   },
   "intent": {
-    "system": "fsticuffs"
+    "rasa": {
+      "config_yaml": "rasa_conf.yml",
+      "url": "RasaNLUserver"
+    },
+    "system": "rasa"
   },
   "microphone": {
     "system": "hermes"
   },
   "sounds": {
-    "error": "",
     "system": "hermes"
   },
   "speech_to_text": {
@@ -33,5 +36,11 @@
     "system": "wavenet",
     "url": "https://texttospeech.googleapis.com/v1/text:synthesize",
     "voice": "Wavenet-C"
+  },
+  "wake": {
+    "porcupine": {
+      "keyword_path": "linux_2021-06-08-utc_v1_9_0.ppn"
+    },
+    "system": "porcupine"
   }
 }

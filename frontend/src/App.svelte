@@ -47,7 +47,6 @@
   });
 
   socket.on('intent', (data) => {
-    console.log('SOCKET INTENT', data);
     processIntent(data);
   });
 
@@ -106,7 +105,6 @@
   const streamer = async () => {
     if (!streaming) {
       try {
-        console.log('STREAMING');
         const stream = await navigator.mediaDevices.getUserMedia({
           audio: true,
         });
@@ -131,7 +129,6 @@
             let streamSS = ss.createStream();
             // stream directly to server
             // it will be temp. stored locally
-            // console.log(blob);
             ss(socket).emit('stream', streamSS, {
               name: 'stream.wav',
               socketId,

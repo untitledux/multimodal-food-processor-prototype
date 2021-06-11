@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import 'regenerator-runtime/runtime';
 const path = require('path');
 dotenv.config({
   path: path.resolve(
@@ -16,7 +17,7 @@ const server = http.createServer(app);
 const axios = require('axios');
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
-const MQTTHOST = process.env.MQTTHOST || '3.94.213.112';
+const MQTTHOST = process.env.MQTTHOST || '127.0.0.1';
 const RHASSPY_PORT = process.env.RHASSPY_PORT || 12183;
 
 const io = require('socket.io')(server, {
@@ -25,8 +26,6 @@ const io = require('socket.io')(server, {
   },
 });
 const ss = require('socket.io-stream');
-
-console.log(process.env.MQTTHOST);
 
 // MQTT
 const mqtt = require('mqtt');
@@ -88,13 +87,17 @@ mqtt_client.on('message', (topic, message) => {
   } else if (topic.indexOf('hermes/dialogueManager/sessionEnded') == 0) {
     let intentJSON = JSON.parse(message);
     let reason = intentJSON.termination.reason;
-    if(reason.indexOf('intentNotRecognized') === 0){
+    if (reason.indexOf('intentNotRecognized') === 0) {
       const response = `I didn't get that. Could you try again?`;
       sendTTS(response);
-      
+
       // wake up manually
-      const msg = '{"modelId": "default", "modelVersion": "", "modelType": "personal", "currentSensitivity": 1.0, "siteId": "default", "sessionId": null, "sendAudioCaptured": null, "lang": null, "customEntities": null}';
-      setTimeout(() => mqtt_client.publish('hermes/hotword/default/detected', msg), 3000);
+      const msg =
+        '{"modelId": "default", "modelVersion": "", "modelType": "personal", "currentSensitivity": 1.0, "siteId": "default", "sessionId": null, "sendAudioCaptured": null, "lang": null, "customEntities": null}';
+      setTimeout(
+        () => mqtt_client.publish('hermes/hotword/default/detected', msg),
+        3000
+      );
     }
   }
 });
@@ -116,19 +119,15 @@ io.on('connection', (client) => {
 
   // when the client sends 'stream' events
   ss(client).on('stream', async (stream, data) => {
-    // console.log('STREAM');
     // get the name of the stream
     const filename = path.basename(data.name);
 
     // pipe the filename to the stream
     stream.pipe(fs.createWriteStream(filename));
     stream.on('data', (chunk) => {
-      // console.log(chunk);
       mqtt_client.publish('hermes/audioServer/default/audioFrame', chunk);
     });
-    stream.on('end', () => {
-      // console.log('END');
-    });
+    stream.on('end', () => {});
 
     stream.on('err', (err) => {
       console.log(err);
@@ -152,7 +151,6 @@ const sendTTS = (msg) => {
     .post(host_path, msg)
     .then((res) => {
       console.log(`SEND TEXT statusCode: ${res.statusCode}`);
-      // console.log(res);
     })
     .catch((error) => {
       console.error(error);

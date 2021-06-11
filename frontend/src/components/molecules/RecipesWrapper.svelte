@@ -84,7 +84,6 @@
       }
     },
     getDuration({ screenId, actionId, voice, slots, sessionId }) {
-      console.log($currRecipe);
       dispatch('TTS', {
         text: `The cooking time is ${$currRecipe.overview[0].TTSDuration}`,
       });
@@ -119,7 +118,6 @@
         }
       } else {
         setActiveToFalse($images, screenId);
-        console.log('actionId', actionId);
         let activeModal = $images.modals.find((obj) => obj.id === actionId);
         activeModal.active = true;
         $images = $images;

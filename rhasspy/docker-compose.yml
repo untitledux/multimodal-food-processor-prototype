@@ -13,8 +13,6 @@ services:
       - '12183:12183'
     environment:
       - PULSE_SERVER=host.docker.internal
-    # devices:
-    #   - "/dev/snd:/dev/snd"
     command: --user-profiles /profiles --profile en
     networks:
       - rhasspy_network
