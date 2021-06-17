@@ -6,7 +6,12 @@
   import { images } from 'utils/store.js';
 
   const ENDPOINT = 'http://0.0.0.0:3000';
-  let socket = io(ENDPOINT, { reconnection: true });
+  let socket;
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+    socket = io(ENDPOINT, { reconnection: true });
+  } else {
+    socket = io({ reconnection: true });
+  }
   let activeObject;
   let socketId;
   let intentName;
