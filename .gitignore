@@ -1,0 +1,6 @@
+server/node_modules/
+frontend//node_modules/
+server/stream.wav
+server/result.wav
+.DS_Store
+server/.env
