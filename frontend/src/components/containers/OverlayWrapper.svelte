@@ -177,25 +177,6 @@
         func: 'addOrContinue',
       })}
   />
-{:else if clickableOverlay && clickableOverlay.overlay === 'modalOverlay2'}
-  <div
-    class="modal-continue-btn"
-    on:click={() =>
-      handleClickOnScreen({
-        screenId: id,
-        actionId: clickableOverlay.continue.actionId,
-        func: 'addOrContinue',
-      })}
-  />
-  <div
-    class="modal-add-btn"
-    on:click={() =>
-      handleClickOnScreen({
-        screenId: id,
-        actionId: clickableOverlay.add.actionId,
-        func: 'addOrContinue',
-      })}
-  />
 {:else if clickableOverlay && clickableOverlay.overlay === 'modalOverlay3'}
   <div
     class="modal-back-btn"

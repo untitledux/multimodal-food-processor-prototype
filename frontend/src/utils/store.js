@@ -511,6 +511,7 @@ export const images = writable({
     {
       id: 'ModalCancelRecipe',
       cp: ModalRecipes,
+      intentFilter: ['CancelRecipe'],
       startSession: false,
       active: false,
       clickableOverlay: {
@@ -617,4 +618,5 @@ function createCount() {
 }
 
 export const currRecipe = writable({});
+export const filter = writable('');
 export const currRecipeStep = createCount();

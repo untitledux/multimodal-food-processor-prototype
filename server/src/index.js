@@ -51,6 +51,14 @@ mqtt_client.subscribe('hermes/intent/#', (err) => {
   }
 });
 
+mqtt_client.subscribe('hermes/dialogueManager/intentNotRecognized', (err) => {
+  if (!err) {
+    console.log('Subscribe to MQTT intentNotRecognized');
+  } else {
+    console.log(err);
+  }
+});
+
 // Subscribe 'get audio buffer from tts'
 mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', (err) => {
   if (!err) {
@@ -83,10 +91,14 @@ mqtt_client.on('message', (topic, message) => {
         console.log('audio write success');
       }
     });
+  } else if (topic.indexOf('hermes/dialogueManager/intentNotRecognized') == 0) {
+    console.log('IIIMMM INN');
+    io.emit('intentNotRecognized');
   } else if (topic.indexOf('hermes/dialogueManager/sessionEnded') == 0) {
     let intentJSON = JSON.parse(message);
     let reason = intentJSON.termination.reason;
-    if (reason.indexOf('intentNotRecognized') === 0) {
+    if (reason.indexOf('intentNotRecognized') == 0) {
+      console.log('HELLO');
       io.emit('intentNotRecognized');
     }
   }

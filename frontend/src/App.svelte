@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import RecordRTC from 'recordrtc';
   import OuterRootWrapper from 'components/containers/OuterRootWrapper.svelte';
-  import { images } from 'utils/store.js';
+  import { images, filter } from 'utils/store.js';
 
   const ENDPOINT = 'http://0.0.0.0:3000';
   let socket;
@@ -55,29 +55,19 @@
     processIntent(data);
   });
 
-  socket.on('intentNotRecognized', (data) => {
-    const topic = 'hermes/hotword/default/detected';
-
+  socket.on('intentNotRecognized', (_) => {
+    console.log('IIIIINNNNNNN');
+    const topic = 'hermes/dialogueManager/continueSession';
     const text = `I didn't get this. Please try again.`;
-
-    const msg = {
-      modelId: 'default',
-      modelVersion: '',
-      modelType: 'personal',
-      currentSensitivity: 1.0,
-      siteId: 'default',
-      sessionId: sessionId,
-      sendAudioCaptured: null,
-      lang: null,
-      customEntities: null,
+    let intentFilter = $filter;
+    console.log(intentFilter);
+    const data = {
+      sessionId,
+      text,
+      intentFilter,
     };
-    socket.emit('tts', text);
-    setTimeout(() => {
-      socket.emit('mqttpublish', { topic, data: msg });
-    }, 3000);
 
-    // setTimeout(() => {
-    // }, 3000);
+    socket.emit('mqttpublish', { topic, data });
   });
 
   const handleTTS = (event) => {
