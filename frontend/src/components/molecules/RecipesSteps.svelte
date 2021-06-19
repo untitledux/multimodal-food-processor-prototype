@@ -52,6 +52,7 @@
       let idx = $currRecipeStep;
       setActiveToFalse($images, screenId);
       if (idx - 2 >= 0) {
+        console.log('IDX', idx - 2);
         $currRecipe.steps[idx - 2].active = true;
         currRecipeStep.decrement();
       } else {
@@ -70,7 +71,9 @@
     },
     scale({ screenId, actionId, voice }) {
       setActiveToFalse($images, screenId);
-      let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
+      let audio = new Audio('assets/VoiceCommand_CC.mp3');
+      audio.play();
+      let activeObj = $images.extras.find((obj) => obj.id === actionId);
       activeObj.active = true;
       $images = $images;
     },

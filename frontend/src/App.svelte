@@ -7,7 +7,7 @@
 
   const ENDPOINT = 'http://0.0.0.0:3000';
   let socket;
-  if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
     socket = io(ENDPOINT, { reconnection: true });
   } else {
     socket = io({ reconnection: true });
@@ -56,7 +56,28 @@
   });
 
   socket.on('intentNotRecognized', (data) => {
-    console.log('Intent not recognized');
+    const topic = 'hermes/hotword/default/detected';
+
+    const text = `I didn't get this. Please try again.`;
+
+    const msg = {
+      modelId: 'default',
+      modelVersion: '',
+      modelType: 'personal',
+      currentSensitivity: 1.0,
+      siteId: 'default',
+      sessionId: sessionId,
+      sendAudioCaptured: null,
+      lang: null,
+      customEntities: null,
+    };
+    socket.emit('tts', text);
+    setTimeout(() => {
+      socket.emit('mqttpublish', { topic, data: msg });
+    }, 3000);
+
+    // setTimeout(() => {
+    // }, 3000);
   });
 
   const handleTTS = (event) => {

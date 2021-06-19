@@ -52,19 +52,20 @@
         }
       } else {
         setActiveToFalse($images, screenId);
-        if (actionId) {
-          $images.home.active = true;
-          currRecipeStep.reset();
-          currRecipe.set(null);
-        } else {
-          if ($currRecipeStep > 0) {
-            $currRecipe.steps[$currRecipeStep - 1].active = true;
-          } else {
-            $currRecipe.overview[0].active = true;
-          }
-        }
+        $images.home.active = true;
+        currRecipeStep.reset();
+        currRecipe.set(null);
         $images = $images;
       }
+    },
+    closeModal({ screenId }) {
+      setActiveToFalse($images, screenId);
+      if ($currRecipeStep > 0) {
+        $currRecipe.steps[$currRecipeStep - 1].active = true;
+      } else {
+        $currRecipe.overview[0].active = true;
+      }
+      $images = $images;
     },
     addOrContinue({ screenId, actionId, voice, slots, sessionId }) {
       setActiveToFalse($images, screenId);
@@ -76,6 +77,8 @@
         const topic = 'hermes/dialogueManager/endSession';
         let answer = slots[0].value.value;
         let text;
+        let activeObj;
+        console.log(answer);
         switch (answer) {
           case 'add':
           case 'add more':
@@ -86,7 +89,7 @@
           case 'go on':
           case 'continue':
             currRecipeStep.increment();
-            let activeObj = $currRecipe.steps[$currRecipeStep - 1];
+            activeObj = $currRecipe.steps[$currRecipeStep - 1];
             activeObj.active = true;
             text = `Ok, you are now on step ${$currRecipeStep}. ${
               activeObj.startTTS ? activeObj.startTTS : ''
@@ -109,11 +112,63 @@
         $images = $images;
       } else {
         let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
-        let idx = $currRecipe.steps.findIndex((obj) => obj.id === actionId);
-        idx + 1 !== $currRecipeStep ? currRecipeStep.increment() : null;
+        if (activeObj) {
+          currRecipeStep.increment();
+        } else {
+          activeObj = $images.extras.find((obj) => obj.id === actionId);
+        }
         activeObj.active = true;
         $images = $images;
       }
+    },
+    nextModal({ screenId, actionId, voice, slots, sessionId }) {
+      setActiveToFalse($images, screenId);
+      if (voice) {
+        if (!slots) {
+          console.log('NOT RECOGNIZED');
+          return;
+        }
+        const topic = 'hermes/dialogueManager/endSession';
+        let answer = slots[0].value.value;
+        let text;
+        switch (answer) {
+          case 'yes':
+            text = "Okay I'm starting the process";
+            let activeObj = $images.modals.find((obj) => obj.id === actionId);
+            activeObj.active = true;
+            break;
+          case 'no':
+            $currRecipe.steps[$currRecipeStep - 1].active = true;
+            text = `Okay you are back on step ${$currRecipeStep}`;
+            break;
+          default:
+            console.warn('No correct slot');
+            break;
+        }
+        const data = {
+          sessionId,
+          text,
+        };
+
+        dispatch('dialogueManager', {
+          topic,
+          data,
+        });
+      } else {
+        let activeObj = $images.modals.find((obj) => obj.id === actionId);
+        activeObj.active = true;
+      }
+      $images = $images;
+    },
+    doneMixing({ screenId, actionId, voice, slots, sessionId }) {
+      setActiveToFalse($images, screenId);
+      let audio = new Audio('assets/VoiceCommand_CC.mp3');
+      audio.play();
+      let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
+      console.log('step', $currRecipeStep);
+      currRecipeStep.increment();
+      activeObj.active = true;
+      $images = $images;
     },
   };
 </script>

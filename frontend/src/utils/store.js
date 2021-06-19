@@ -202,32 +202,6 @@ export const images = writable({
           },
         },
         {
-          id: 'CatalanCream_Step_2_Green_Signal',
-          cp: RecipesSteps,
-          startSession: false,
-          url: 'https://ik.imagekit.io/CookingAssistant/GREEN_SIGNAL_RIGHT_AMOUNT_KFWJt5Rbq.png',
-          active: false,
-          startTTS: 'Weigh out 80g of powdered sugar into the bowl',
-          clickableOverlay: {
-            overlay: 'clickOverlay2',
-            next: {
-              actionId: 'CatalanCream_Step_3',
-            },
-            select: {
-              actionId: 'CatalanCream_Step_3',
-            },
-            scale: {
-              actionId: '',
-            },
-            prev: {
-              actionId: 'CatalanCream_Step_1',
-            },
-            cancel: {
-              actionId: 'ModalCancelRecipe',
-            },
-          },
-        },
-        {
           id: 'CatalanCream_Step_3',
           cp: RecipesSteps,
           startSession: false,
@@ -266,10 +240,10 @@ export const images = writable({
           clickableOverlay: {
             overlay: 'clickOverlay2',
             next: {
-              actionId: 'CatalanCream_Step_5',
+              actionId: 'ModalMixing1',
             },
             select: {
-              actionId: 'CatalanCream_Step_5',
+              actionId: 'ModalMixing1',
             },
             scale: {
               actionId: '',
@@ -565,6 +539,68 @@ export const images = writable({
         },
       },
       url: 'https://ik.imagekit.io/CookingAssistant/ALERT_FOR_LESS_SUGAR_ADDED_2Rg7IeuvJC.png',
+    },
+    {
+      id: 'ModalMixing1',
+      cp: ModalRecipes,
+      startSession: true,
+      intentFilter: ['ReactMixingDisplay'],
+      startTTS:
+        'Do you want to start the mixing process for 30 seconds on Level 4?',
+      active: false,
+      clickableOverlay: {
+        overlay: 'modalOverlay3',
+        cancel: {
+          actionId: 'CatalanCream_Step_4',
+        },
+        continue: {
+          actionId: 'ModalMixing2',
+        },
+      },
+      url: 'https://ik.imagekit.io/CookingAssistant/Feedback_Mixing_a-_CyJq7N.png',
+    },
+    {
+      id: 'ModalMixing2',
+      cp: ModalRecipes,
+      startSession: true,
+      startTTS: 'Ok Im mixing for 30 seconds on level 4 ',
+      active: false,
+      clickableOverlay: {
+        transitionTime: 2,
+        overlay: 'modalOverlay4',
+        continue: {
+          actionId: 'CatalanCream_Step_5',
+        },
+      },
+      url: 'https://ik.imagekit.io/CookingAssistant/Feedback_Mixing_2_JYmMhAJg88E.png',
+    },
+  ],
+  extras: [
+    {
+      id: 'CatalanCream_Step_2_Green_Signal',
+      cp: RecipesSteps,
+      startSession: false,
+      url: 'https://ik.imagekit.io/CookingAssistant/GREEN_SIGNAL_RIGHT_AMOUNT_KFWJt5Rbq.png',
+      active: false,
+      startTTS: 'Weigh out 80g of powdered sugar into the bowl',
+      clickableOverlay: {
+        overlay: 'clickOverlay2',
+        next: {
+          actionId: 'CatalanCream_Step_3',
+        },
+        select: {
+          actionId: 'CatalanCream_Step_3',
+        },
+        scale: {
+          actionId: '',
+        },
+        prev: {
+          actionId: 'CatalanCream_Step_1',
+        },
+        cancel: {
+          actionId: 'ModalCancelRecipe',
+        },
+      },
     },
   ],
 });
