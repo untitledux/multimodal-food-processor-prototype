@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
   import RecordRTC from 'recordrtc';
   import OuterRootWrapper from 'components/containers/OuterRootWrapper.svelte';
+  import Speaker from 'components/atoms/Speaker.svelte';
   import { images, filter } from 'utils/store.js';
 
   const ENDPOINT = 'http://0.0.0.0:3000';
@@ -14,16 +15,26 @@
   }
   let activeObject;
   let socketId;
+  let talking = false;
   let intentName;
   let sessionId;
   let slots;
   let recordAudio;
   let streaming = false;
   let mediaStream;
+  let modal = true;
+  let storage;
 
   onMount(() => {
-    //Enable streaming on page load
-    streamer();
+    storage = window.sessionStorage;
+    let data = sessionStorage.getItem('modal');
+    console.log(data);
+
+    if (data) {
+      modal = false;
+      //Enable streaming on page load
+      streamer();
+    }
   });
 
   // Run reactive everytime when store images change
@@ -56,22 +67,39 @@
   });
 
   socket.on('intentNotRecognized', (_) => {
-    console.log('IIIIINNNNNNN');
     const topic = 'hermes/dialogueManager/continueSession';
     const text = `I didn't get this. Please try again.`;
-    let intentFilter = $filter;
-    console.log(intentFilter);
+    const intentFilter = $filter;
     const data = {
       sessionId,
       text,
       intentFilter,
     };
-
     socket.emit('mqttpublish', { topic, data });
+  });
+
+  socket.on('voiceAnimation', (data) => {
+    console.log(data);
+    talking = data;
   });
 
   const handleTTS = (event) => {
     socket.emit('tts', event.detail.text);
+  };
+
+  const handleStreamer = (event) => {
+    let stream = event.detail.streaming;
+    if (stream) {
+      streamer();
+    } else {
+      stopStreamer();
+    }
+  };
+
+  const closeModal = () => {
+    modal = false;
+    storage.setItem('modal', true);
+    streamer();
   };
 
   socket.on('results', function (data) {
@@ -159,9 +187,17 @@
         console.error(err);
       }
     } else {
+      stopStreamer();
+    }
+  };
+
+  const stopStreamer = async () => {
+    if (recordAudio && mediaStream) {
       await recordAudio.stopRecording();
       streaming = false;
       mediaStream.stop();
+    } else {
+      console.warn('Streamer not running');
     }
   };
 </script>
@@ -171,17 +207,45 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/socket.io-stream/0.9.1/socket.io-stream.js"></script>
 </svelte:head>
 
+<div class="modal-outerwrapper" class:open={modal}>
+  <div class="backdrop" />
+  <div class="modal-wrapper">
+    <div class="header">Welcome to the Audio-Visual-Cooking-Assistant</div>
+    <p>
+      This prototype visualizes an example of a fully implemented interface
+      within a multi-function food processor.
+    </p>
+    <p>
+      The project was a student project of the User-Experience Master at
+      Technische Hochschule Ingolstadt in summer term 2021.
+    </p>
+    <p style="margin-top: 20px">
+      <strong
+        >Please enable and allow this application to use your microphone to
+        properly work.</strong
+      >
+    </p>
+
+    <button on:click={closeModal} style="margin-top: 50px">Let' start</button>
+  </div>
+</div>
+
 <div
   class="wrapper dem-display-flex dem-justify-content-center dem-align-items-center"
 >
-  <OuterRootWrapper
-    on:TTS={handleTTS}
-    on:dialogueManager={handleDialogueManager}
-    {...activeObject}
-    intent={intentName}
-    {sessionId}
-    {slots}
-  />
+  <div class="dem-display-flex dem-position-relative">
+    <div class="speaker-wrapper">
+      <Speaker {talking} {streaming} on:streaming={handleStreamer} />
+    </div>
+    <OuterRootWrapper
+      on:TTS={handleTTS}
+      on:dialogueManager={handleDialogueManager}
+      {...activeObject}
+      intent={intentName}
+      {sessionId}
+      {slots}
+    />
+  </div>
 </div>
 
 <style lang="scss">
@@ -191,7 +255,77 @@
     width: 100vw;
     background-color: #d2d2d2;
     @media screen and (max-width: 800px) {
-      padding: 50px;
+      padding: 20px;
     }
+  }
+
+  .speaker-wrapper {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2.5%;
+  }
+
+  .modal-outerwrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 150;
+    display: none;
+    &.open {
+      display: flex;
+    }
+  }
+
+  .backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-wrapper {
+    background-color: #fff;
+    padding: 70px 50px;
+    z-index: 200;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  p {
+    line-height: 1.4;
+    font-weight: 300;
+  }
+
+  button {
+    padding: 12px 50px;
+    min-width: 160px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border: 0;
+    border-radius: 50px;
+    display: inline-block;
+    cursor: pointer;
+    width: fit-content;
+    font-weight: 300;
   }
 </style>

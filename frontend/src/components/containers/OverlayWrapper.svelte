@@ -16,7 +16,7 @@
       handleClickOnScreen({
         screenId: id,
         actionId: clickableOverlay.continue.actionId,
-        func: 'doneMixing',
+        func: 'doneModal',
       });
     }, tranistionTime * 1000);
   }
@@ -192,7 +192,7 @@
       handleClickOnScreen({
         screenId: id,
         actionId: clickableOverlay.continue.actionId,
-        func: 'mixing',
+        func: 'nextModal',
       })}
   />
 {:else if clickableOverlay && clickableOverlay.overlay === 'modalOverlay4'}

@@ -1,12 +1,25 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onMount, onDestroy } from 'svelte';
   import Image from 'components/molecules/Image.svelte';
-  import { images, currRecipe, currRecipeStep } from 'utils/store.js';
+  import {
+    images,
+    currRecipe,
+    currRecipeStep,
+    modalOpen,
+  } from 'utils/store.js';
   import { setActiveToFalse } from 'utils/util.js';
   export let url;
   export let id;
 
   const dispatch = createEventDispatcher();
+
+  onMount(() => {
+    $modalOpen = true;
+  });
+
+  onDestroy(() => {
+    $modalOpen = false;
+  });
 
   // Make functions available in parent
   export const overlayFunctions = {
@@ -160,7 +173,7 @@
       }
       $images = $images;
     },
-    doneMixing({ screenId, actionId, voice, slots, sessionId }) {
+    doneModal({ screenId, actionId, voice, slots, sessionId }) {
       setActiveToFalse($images, screenId);
       let audio = new Audio('assets/VoiceCommand_CC.mp3');
       audio.play();

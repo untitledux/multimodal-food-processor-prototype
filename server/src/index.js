@@ -59,6 +59,14 @@ mqtt_client.subscribe('hermes/dialogueManager/intentNotRecognized', (err) => {
   }
 });
 
+mqtt_client.subscribe('hermes/dialogueManager/sessionStarted', (err) => {
+  if (!err) {
+    console.log('Subscribe to session started');
+  } else {
+    console.log(err);
+  }
+});
+
 // Subscribe 'get audio buffer from tts'
 mqtt_client.subscribe('hermes/audioServer/default/playBytes/#', (err) => {
   if (!err) {
@@ -82,6 +90,7 @@ mqtt_client.on('message', (topic, message) => {
 
   if (topic.indexOf('hermes/intent/') === 0) {
     let intentJSON = JSON.parse(message);
+    io.emit('voiceAnimation', false);
     io.emit('intent', intentJSON);
   } else if (topic.indexOf('hermes/audioServer/default/playBytes/') == 0) {
     // get audio buffer from tts
@@ -91,16 +100,13 @@ mqtt_client.on('message', (topic, message) => {
         console.log('audio write success');
       }
     });
+  } else if (topic.indexOf('hermes/dialogueManager/sessionStarted') === 0) {
+    console.log('STart session');
+    io.emit('voiceAnimation', true);
   } else if (topic.indexOf('hermes/dialogueManager/intentNotRecognized') == 0) {
-    console.log('IIIMMM INN');
     io.emit('intentNotRecognized');
   } else if (topic.indexOf('hermes/dialogueManager/sessionEnded') == 0) {
-    let intentJSON = JSON.parse(message);
-    let reason = intentJSON.termination.reason;
-    if (reason.indexOf('intentNotRecognized') == 0) {
-      console.log('HELLO');
-      io.emit('intentNotRecognized');
-    }
+    io.emit('voiceAnimation', false);
   }
 });
 

@@ -169,11 +169,11 @@
       case 'addOrContinue':
         overlayFunctions.addOrContinue({ screenId, actionId, voice: false });
         break;
-      case 'mixing':
+      case 'nextModal':
         overlayFunctions.nextModal({ screenId, actionId, voice: false });
         break;
-      case 'doneMixing':
-        overlayFunctions.doneMixing({ screenId, actionId, voice: false });
+      case 'doneModal':
+        overlayFunctions.doneModal({ screenId, actionId, voice: false });
         break;
       default:
         console.log('No function');
