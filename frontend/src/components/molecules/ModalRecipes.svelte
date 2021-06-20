@@ -30,7 +30,7 @@
         let data;
 
         if (!slots) {
-          console.log('NOT RECOGNISED');
+          console.warn('Command not recognized');
         } else {
           let answer = slots[0].value.value.toLowerCase();
           topic = 'hermes/dialogueManager/endSession';
@@ -91,7 +91,6 @@
         let answer = slots[0].value.value;
         let text;
         let activeObj;
-        console.log(answer);
         switch (answer) {
           case 'add':
           case 'add more':
@@ -178,7 +177,6 @@
       let audio = new Audio('assets/VoiceCommand_CC.mp3');
       audio.play();
       let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
-      console.log('step', $currRecipeStep);
       currRecipeStep.increment();
       activeObj.active = true;
       $images = $images;

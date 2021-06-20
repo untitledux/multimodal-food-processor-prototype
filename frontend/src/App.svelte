@@ -27,9 +27,7 @@
 
   onMount(() => {
     storage = window.sessionStorage;
-    let data = sessionStorage.getItem('modal');
-    console.log(data);
-
+    const data = sessionStorage.getItem('modal');
     if (data) {
       modal = false;
       //Enable streaming on page load
@@ -79,7 +77,6 @@
   });
 
   socket.on('voiceAnimation', (data) => {
-    console.log(data);
     talking = data;
   });
 

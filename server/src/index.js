@@ -86,8 +86,6 @@ mqtt_client.subscribe('hermes/dialogueManager/sessionEnded', (err) => {
 
 // When subscribed topic is published  - you get message here
 mqtt_client.on('message', (topic, message) => {
-  console.log('topic: ' + topic);
-
   if (topic.indexOf('hermes/intent/') === 0) {
     let intentJSON = JSON.parse(message);
     io.emit('voiceAnimation', false);
@@ -101,7 +99,6 @@ mqtt_client.on('message', (topic, message) => {
       }
     });
   } else if (topic.indexOf('hermes/dialogueManager/sessionStarted') === 0) {
-    console.log('STart session');
     io.emit('voiceAnimation', true);
   } else if (topic.indexOf('hermes/dialogueManager/intentNotRecognized') == 0) {
     io.emit('intentNotRecognized');
@@ -146,8 +143,6 @@ io.on('connection', (client) => {
 const mqttPublish = (msg) => {
   const topic = msg.topic;
   const data = JSON.stringify(msg.data);
-  console.log(data);
-
   mqtt_client.publish(topic, data);
 };
 
@@ -159,7 +154,7 @@ const sendTTS = (msg) => {
   axios
     .post(host_path, msg)
     .then((res) => {
-      console.log(`SEND TEXT statusCode: ${res.statusCode}`);
+      console.log(`Send TTS`);
     })
     .catch((error) => {
       console.error(error);

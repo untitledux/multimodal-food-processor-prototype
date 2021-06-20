@@ -55,7 +55,6 @@
       let idx = $currRecipeStep;
       setActiveToFalse($images, screenId);
       if (idx - 2 >= 0) {
-        console.log('IDX', idx - 2);
         $currRecipe.steps[idx - 2].active = true;
         currRecipeStep.decrement();
       } else {

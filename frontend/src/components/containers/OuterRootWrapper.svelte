@@ -176,7 +176,7 @@
         overlayFunctions.doneModal({ screenId, actionId, voice: false });
         break;
       default:
-        console.log('No function');
+        console.warn('No function');
         break;
     }
   };
