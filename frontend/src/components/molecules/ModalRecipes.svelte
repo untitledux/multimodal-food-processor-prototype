@@ -35,7 +35,6 @@
           let answer = slots[0].value.value.toLowerCase();
           topic = 'hermes/dialogueManager/endSession';
           setActiveToFalse($images, screenId);
-          console.log(answer);
           if (answer.includes('yes')) {
             text =
               'Okay I canceled the recipe and you are now back on the menu.';
@@ -84,7 +83,7 @@
       setActiveToFalse($images, screenId);
       if (voice) {
         if (!slots) {
-          console.log('NOT RECOGNIZED');
+          console.warn('slot not recognized');
           return;
         }
         const topic = 'hermes/dialogueManager/endSession';
@@ -137,7 +136,7 @@
       setActiveToFalse($images, screenId);
       if (voice) {
         if (!slots) {
-          console.log('NOT RECOGNIZED');
+          console.warn('slot not recognized');
           return;
         }
         const topic = 'hermes/dialogueManager/endSession';
