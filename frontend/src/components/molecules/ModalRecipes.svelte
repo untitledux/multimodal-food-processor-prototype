@@ -34,7 +34,7 @@
         } else {
           let answer = slots[0].value.value.toLowerCase();
           topic = 'hermes/dialogueManager/endSession';
-          setActiveToFalse($images, screenId);
+          setActiveToFalse({ obj: $images, key: 'id', value: screenId });
           if (answer.includes('yes')) {
             text =
               'Okay I canceled the recipe and you are now back on the menu.';
@@ -63,7 +63,7 @@
           });
         }
       } else {
-        setActiveToFalse($images, screenId);
+        setActiveToFalse({ obj: $images, key: 'id', value: screenId });
         $images.home.active = true;
         currRecipeStep.reset();
         currRecipe.set(null);
@@ -71,7 +71,7 @@
       }
     },
     closeModal({ screenId }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       if ($currRecipeStep > 0) {
         $currRecipe.steps[$currRecipeStep - 1].active = true;
       } else {
@@ -80,7 +80,7 @@
       $images = $images;
     },
     addOrContinue({ screenId, actionId, voice, slots, sessionId }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       if (voice) {
         if (!slots) {
           console.warn('slot not recognized');
@@ -133,7 +133,7 @@
       }
     },
     nextModal({ screenId, actionId, voice, slots, sessionId }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       if (voice) {
         if (!slots) {
           console.warn('slot not recognized');
@@ -172,7 +172,7 @@
       $images = $images;
     },
     doneModal({ screenId, actionId, voice, slots, sessionId }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       let audio = new Audio('assets/VoiceCommand_CC.mp3');
       audio.play();
       let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);

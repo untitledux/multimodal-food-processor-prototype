@@ -11,6 +11,13 @@
   export let sessionId;
   export let intent;
 
+  import { imageHeight } from 'utils/store.js';
+
+  let height;
+
+  $: console.log(height);
+
+  $: imageHeight.set(height);
   const dispatch = createEventDispatcher();
 
   let overlayFunctions;
@@ -182,7 +189,7 @@
   };
 </script>
 
-<div class="imageWrapper">
+<div class="imageWrapper" bind:clientHeight={height}>
   <OverlayWapper
     {clickableOverlay}
     {id}

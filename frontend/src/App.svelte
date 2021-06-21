@@ -4,7 +4,8 @@
   import RecordRTC from 'recordrtc';
   import OuterRootWrapper from 'components/containers/OuterRootWrapper.svelte';
   import Speaker from 'components/atoms/Speaker.svelte';
-  import { images, filter } from 'utils/store.js';
+  import Sidebar from 'components/layout/Sidebar.svelte';
+  import { images, filter, currRecipeStep } from 'utils/store.js';
 
   const ENDPOINT = 'http://0.0.0.0:3000';
   let socket;
@@ -24,6 +25,7 @@
   let mediaStream;
   let modal = true;
   let storage;
+  let wrapperHeight;
 
   onMount(() => {
     storage = window.sessionStorage;
@@ -37,6 +39,7 @@
 
   // Run reactive everytime when store images change
   $: {
+    console.log($currRecipeStep);
     intentName = null;
     setActiveImage({ obj: $images, key: 'active', value: true });
   }
@@ -230,24 +233,27 @@
 <div
   class="wrapper dem-display-flex dem-justify-content-center dem-align-items-center"
 >
-  <div class="dem-display-flex dem-position-relative">
-    <div class="speaker-wrapper">
-      <Speaker {talking} {streaming} on:streaming={handleStreamer} />
+  <div class="dem-display-flex">
+    <Sidebar />
+    <div class="dem-display-flex dem-position-relative">
+      <div class="speaker-wrapper">
+        <Speaker {talking} {streaming} on:streaming={handleStreamer} />
+      </div>
+      <OuterRootWrapper
+        on:TTS={handleTTS}
+        on:dialogueManager={handleDialogueManager}
+        {...activeObject}
+        intent={intentName}
+        {sessionId}
+        {slots}
+      />
     </div>
-    <OuterRootWrapper
-      on:TTS={handleTTS}
-      on:dialogueManager={handleDialogueManager}
-      {...activeObject}
-      intent={intentName}
-      {sessionId}
-      {slots}
-    />
   </div>
 </div>
 
 <style lang="scss">
   .wrapper {
-    padding: 100px;
+    padding: 50px;
     height: 100vh;
     width: 100vw;
     background-color: #d2d2d2;
@@ -255,7 +261,6 @@
       padding: 20px;
     }
   }
-
   .speaker-wrapper {
     position: absolute;
     z-index: 100;
@@ -298,31 +303,5 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  .header {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-
-  p {
-    line-height: 1.4;
-    font-weight: 300;
-  }
-
-  button {
-    padding: 12px 50px;
-    min-width: 160px;
-    background-color: #000;
-    color: #fff;
-    font-size: 12px;
-    border: 0;
-    border-radius: 50px;
-    display: inline-block;
-    cursor: pointer;
-    width: fit-content;
-    font-weight: 300;
   }
 </style>

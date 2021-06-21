@@ -10,7 +10,7 @@
   // Make functions available in parent
   export const overlayFunctions = {
     nextStep({ screenId, actionId, voice, sessionId, skip }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       let step = false;
       let activeObj = $currRecipe.steps.find((obj) => obj.id === actionId);
       if (!activeObj) {
@@ -53,7 +53,7 @@
     },
     prevStep({ screenId, actionId, voice }) {
       let idx = $currRecipeStep;
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       if (idx - 2 >= 0) {
         $currRecipe.steps[idx - 2].active = true;
         currRecipeStep.decrement();
@@ -72,7 +72,7 @@
       }
     },
     scale({ screenId, actionId, voice }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       let audio = new Audio('assets/VoiceCommand_CC.mp3');
       audio.play();
       let activeObj = $images.extras.find((obj) => obj.id === actionId);
@@ -86,7 +86,7 @@
       });
     },
     cancelRecipe({ screenId, actionId, voice, slots, sessionId }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       let activeModal = $images.modals.find((obj) => obj.id === actionId);
       activeModal.active = true;
       if (voice) {

@@ -15,7 +15,7 @@
   // Make functions available in parent
   export const overlayFunctions = {
     selectRecipe({ screenId, actionId, voice, sessionId }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       let recipeId;
       let rawSlot;
       if (voice) {

@@ -577,7 +577,7 @@ export const images = writable({
           actionId: 'CatalanCream_Step_9',
         },
       },
-      url: 'https://ik.imagekit.io/CookingAssistant/Feedback_Mixing_2_JYmMhAJg88E.png',
+      url: 'https://ik.imagekit.io/CookingAssistant/Feedbkack_cooking_2__AEdQessLydJ.png',
     },
   ],
   extras: [
@@ -621,7 +621,68 @@ function createCount() {
   };
 }
 
+export const insights = writable([
+  {
+    insightId: 1,
+    recipeStep: 0,
+    screenId: 'SelectRecipe',
+    insight: `When starting the interaction with the Cookit via voice: </br>
+  1. the users would prefer the option to name (wake word) the Cookit by themselves. </br>
+  2. the users would say "Hello/Let's go/Hey Cookit".
+  `,
+    commands: 'Say <i>Hey Cookit!</i> to wake up the system',
+  },
+  {
+    insightId: 2,
+    recipeStep: 0,
+    screenId: 'SelectRecipe',
+    insight: `When searching for a recipe the users would imagine doing this by voice (e.g. searching for a specific ingredient in recipes) and/ or by screen (e.g. scrolling through the recipes with pictures and overviews).`,
+    commands:
+      'Say <i>Select Catalan Cream recipe</i> or select it with <i>mouse</i>',
+  },
+  {
+    insightId: 3,
+    recipeStep: 1,
+    screenId: 'CatalanCream_Step_1',
+    insight: `When missing some parts of an instruction: </br> 1. the users would tell the Cookit to repeat the step (e.g."repeat step"). </br> 2. the users would like to see the instruction via screen (click on a back-button, a checklist/overview).`,
+    commands:
+      'Say e.g. <i>Repeat this step</i> or <i>Tell me again what I need to do here</i>',
+  },
+  {
+    insightId: 4,
+    recipeStep: 2,
+    screenId: 'CatalanCream_Step_2',
+    insight: `If the weighting is wrong the users would like the following feedback, via screen, with a sound, the opportunity to continue with the wrong amount or visual feedback in form of light.`,
+    commands:
+      'Say e.g. <i>Go to the next step</i> to see that the weighting is wrong',
+  },
+  {
+    insightId: 5,
+    recipeStep: 4,
+    screenId: 'CatalanCream_Step_4',
+    insight: `When the users finished a step, they would like to continue via the screen, they would say it directly to the CookIt or the device should sense it.`,
+    commands: 'Say e.g. <i>Start mixing</i> or <i>Next</i>',
+  },
+  {
+    insightId: 6,
+    recipeStep: 6,
+    screenId: 'CatalanCream_Step_6',
+    insight: `When the users finished a step, they would like to continue on via the screen, they would say it directly to the CookIt or the device should sense it.
+    `,
+    commands: `Say e.g. <i>Go next</i> or <i>What's next?</i>`,
+  },
+  {
+    insightId: 6,
+    recipeStep: 8,
+    screenId: 'CatalanCream_Step_8',
+    insight: `The CookIt should give Feedback, when it is  finished with a step/recipe, via screen/ voice/ sound (e.g. warning/ success sound)`,
+    commands:
+      'Say e.g. <i>Start cooking</i> or <i>Go next</i> to start the process',
+  },
+]);
+
 export const currRecipe = writable({});
 export const filter = writable('');
 export const currRecipeStep = createCount();
 export const modalOpen = writable(false);
+export const imageHeight = writable(0);

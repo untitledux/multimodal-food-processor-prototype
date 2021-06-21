@@ -18,7 +18,7 @@
   // Make functions available in parent
   export const overlayFunctions = {
     startRecipe({ screenId, actionId, voice }) {
-      setActiveToFalse($images, screenId);
+      setActiveToFalse({ obj: $images, key: 'id', value: screenId });
       let activeObject = $currRecipe.steps.find((obj) => obj.id === actionId);
       activeObject.active = true;
       currRecipeStep.increment();
@@ -34,7 +34,7 @@
     addPortion({ screenId, actionId, voice, slots, sessionId }) {
       if (voice) {
         const topic = 'hermes/dialogueManager/endSession';
-        setActiveToFalse($images, screenId);
+        setActiveToFalse({ obj: $images, key: 'id', value: screenId });
         let portionSlot = slots.find((obj) => obj.entity === 'portions');
         if (portionSlot) {
           let numberStr = portionSlot.rawValue;
@@ -61,7 +61,7 @@
           });
         }
       } else {
-        setActiveToFalse($images, screenId);
+        setActiveToFalse({ obj: $images, key: 'id', value: screenId });
         let portionScreen = $currRecipe.overview.find(
           (obj) => obj.id === actionId
         );
@@ -75,7 +75,7 @@
           text: `You are now on step ${$currRecipeStep} of ${$currRecipe.name}`,
         });
       } else {
-        setActiveToFalse($images, screenId);
+        setActiveToFalse({ obj: $images, key: 'id', value: screenId });
         let portionScreen = $currRecipe.overview.find(
           (obj) => obj.id === actionId
         );
@@ -96,7 +96,7 @@
         let data;
 
         if (!slots) {
-          setActiveToFalse($images, screenId);
+          setActiveToFalse({ obj: $images, key: 'id', value: screenId });
           let activeModal = $images.modals.find((obj) => obj.id === actionId);
           activeModal.active = true;
           $images = $images;
@@ -119,7 +119,7 @@
           console.log('Error');
         }
       } else {
-        setActiveToFalse($images, screenId);
+        setActiveToFalse({ obj: $images, key: 'id', value: screenId });
         let activeModal = $images.modals.find((obj) => obj.id === actionId);
         activeModal.active = true;
         $images = $images;
