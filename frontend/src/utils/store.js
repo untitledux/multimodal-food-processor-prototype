@@ -646,7 +646,7 @@ export const insights = writable([
     screenId: 'CatalanCream_Step_1',
     insight: `When missing some parts of an instruction: </br> 1. the users would tell the Cookit to repeat the step (e.g."repeat step"). </br> 2. the users would like to see the instruction via screen (click on a back-button, a checklist/overview).`,
     commands:
-      'Say e.g. <i>Repeat this step</i> or <i>Tell me again what I need to do here</i>',
+      'Say e.g. <i>Repeat this step</i> or <i>Explain it again please</i>',
   },
   {
     insightId: 4,
@@ -661,12 +661,12 @@ export const insights = writable([
     recipeStep: 4,
     screenId: 'CatalanCream_Step_4',
     insight: `When the users finished a step, they would like to continue via the screen, they would say it directly to the CookIt or the device should sense it.`,
-    commands: 'Say e.g. <i>Start mixing</i> or <i>Next</i>',
+    commands: 'Say e.g. <i>Mix it</i> or <i>Next</i>',
   },
   {
     insightId: 6,
     recipeStep: 6,
-    screenId: 'CatalanCream_Step_6',
+    screenId: 'CatalanCream_Step_7',
     insight: `When the users finished a step, they would like to continue on via the screen, they would say it directly to the CookIt or the device should sense it.
     `,
     commands: `Say e.g. <i>Go next</i> or <i>What's next?</i>`,

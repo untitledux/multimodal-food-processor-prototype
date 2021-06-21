@@ -14,9 +14,6 @@
   import { imageHeight } from 'utils/store.js';
 
   let height;
-
-  $: console.log(height);
-
   $: imageHeight.set(height);
   const dispatch = createEventDispatcher();
 

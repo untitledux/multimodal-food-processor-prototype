@@ -7,13 +7,10 @@
     imageHeight,
   } from 'utils/store.js';
   import { setActiveToFalse, setToActive } from 'utils/util.js';
-
-  $: console.log($imageHeight);
   let activeTab;
   let sidebar;
 
   const handleInsight = (i, idx, screenId) => {
-    console.log(idx);
     activeTab = i;
     if ($currRecipeStep > idx) {
       let distance = $currRecipeStep - idx;
