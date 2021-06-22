@@ -30,6 +30,8 @@ export const images = writable({
           id: 'RecipeOverview_2P',
           cp: RecipesWrapper,
           TTSDuration: '2 hours 25minutes',
+          TTSIngredients:
+            'For this recipe you need the following ingredients: 150ml Milk, 1/2 Lemon, 1 prise Cinnamon, 40g Powdered Sugar, 2 Egg Yolks, 10g Cornstarch 2EL Brown sugar',
           TTSrecommendations: 'start the recipe or to adjust the portions',
           startSession: false,
           url: 'https://ik.imagekit.io/CookingAssistant/2_PORTION_SCREEN_6WYr3CD1c_C.png',
@@ -61,6 +63,8 @@ export const images = writable({
           cp: RecipesWrapper,
           TTSrecommendations: 'start the recipe or to adjust the portions',
           TTSDuration: '2 hours 25minutes',
+          TTSIngredients:
+            'For this recipe you need the following ingredients: 150ml Milk, 1/2 Lemon, 1 prise Cinnamon, 40g Powdered Sugar, 2 Egg Yolks, 10g Cornstarch 2EL Brown sugar',
           startSession: false,
           url: 'https://ik.imagekit.io/CookingAssistant/3_PORTION_SCREEN_1__q643ODANEfg.png',
           active: false,
@@ -94,6 +98,8 @@ export const images = writable({
           startSession: false,
           TTSrecommendations: 'start the recipe or to adjust the portions',
           TTSDuration: '2 hours 25minutes',
+          TTSIngredients:
+            'For this recipe you need the following ingredients: 150ml Milk, 1/2 Lemon, 1 prise Cinnamon, 40g Powdered Sugar, 2 Egg Yolks, 10g Cornstarch 2EL Brown sugar',
           clickableOverlay: {
             overlay: 'clickOverlay3',
             select: {
@@ -122,6 +128,8 @@ export const images = writable({
           startSession: false,
           TTSDuration: '2 hours 25minutes',
           TTSrecommendations: 'start the recipe or to adjust the portions',
+          TTSIngredients:
+            'For this recipe you need the following ingredients: 150ml Milk, 1/2 Lemon, 1 prise Cinnamon, 40g Powdered Sugar, 2 Egg Yolks, 10g Cornstarch 2EL Brown sugar',
           url: 'https://ik.imagekit.io/CookingAssistant/5_PORTION_SCREEN_wIRz3xylH.png',
           active: false,
           clickableOverlay: {
@@ -630,7 +638,7 @@ export const insights = writable([
   1. the users would prefer the option to name (wake word) the Cookit by themselves. </br>
   2. the users would say "Hello/Let's go/Hey Cookit".
   `,
-    commands: 'Say <i>Hey Cookit!</i> to wake up the system',
+    commands: 'Say <i>Hey Cookit!</i> to wake up the system.',
   },
   {
     insightId: 2,
@@ -638,46 +646,63 @@ export const insights = writable([
     screenId: 'SelectRecipe',
     insight: `When searching for a recipe the users would imagine doing this by voice (e.g. searching for a specific ingredient in recipes) and/ or by screen (e.g. scrolling through the recipes with pictures and overviews).`,
     commands:
-      'Say <i>Select Catalan Cream recipe</i> or select it with <i>mouse</i>',
+      'Say <i>Select Catalan Cream recipe</i> or select it with <i>mouse</i>.',
   },
   {
     insightId: 3,
+    recipeStep: 0,
+    screenId: 'RecipeOverview_2P',
+    insight: `Users perceive it as good, that Cookit read out loud the ingredients list before cooking.`,
+    commands:
+      'Say <i>What do I need for this recipe?</i> or <i>What ingredients do I need?</i>.',
+  },
+  {
+    insightId: 4,
     recipeStep: 1,
     screenId: 'CatalanCream_Step_1',
     insight: `When missing some parts of an instruction: </br> 1. the users would tell the Cookit to repeat the step (e.g."repeat step"). </br> 2. the users would like to see the instruction via screen (click on a back-button, a checklist/overview).`,
     commands:
-      'Say e.g. <i>Repeat this step</i> or <i>Explain it again please</i>',
+      'Say e.g. <i>Repeat this step</i> or <i>Explain it again please</i>.',
   },
   {
-    insightId: 4,
+    insightId: 5,
     recipeStep: 2,
     screenId: 'CatalanCream_Step_2',
     insight: `If the weighting is wrong the users would like the following feedback, via screen, with a sound, the opportunity to continue with the wrong amount or visual feedback in form of light.`,
     commands:
-      'Say e.g. <i>Go to the next step</i> to see that the weighting is wrong',
-  },
-  {
-    insightId: 5,
-    recipeStep: 4,
-    screenId: 'CatalanCream_Step_4',
-    insight: `When the users finished a step, they would like to continue via the screen, they would say it directly to the CookIt or the device should sense it.`,
-    commands: 'Say e.g. <i>Mix it</i> or <i>Next</i>',
+      'Say e.g. <i>Go to the next step</i> to see that the weighting is wrong.',
   },
   {
     insightId: 6,
+    recipeStep: 4,
+    screenId: 'CatalanCream_Step_4',
+    insight: `When the users finished a step, they would like to continue via the screen, they would say it directly to the CookIt or the device should sense it.`,
+    commands: 'Say e.g. <i>Mix it</i> or <i>Next</i>.',
+  },
+  {
+    insightId: 7,
     recipeStep: 6,
     screenId: 'CatalanCream_Step_7',
     insight: `When the users finished a step, they would like to continue on via the screen, they would say it directly to the CookIt or the device should sense it.
     `,
-    commands: `Say e.g. <i>Go next</i> or <i>What's next?</i>`,
+    commands: `Say e.g. <i>Go next</i> or <i>What's next?</i>.`,
   },
   {
-    insightId: 6,
+    insightId: 8,
     recipeStep: 8,
     screenId: 'CatalanCream_Step_8',
     insight: `The CookIt should give Feedback, when it is  finished with a step/recipe, via screen/ voice/ sound (e.g. warning/ success sound)`,
     commands:
-      'Say e.g. <i>Start cooking</i> or <i>Go next</i> to start the process',
+      'Say e.g. <i>Start cooking</i> or <i>Go next</i> to start the process.',
+  },
+  {
+    insightId: 9,
+    recipeStep: 3,
+    screenId: 'CatalanCream_Step_3',
+    insight: `When canceling a recipe the users would like to do this by voice (e.g. cancel this recipe) and/ or by screen.
+  `,
+    commands:
+      'Say <i>Cancel this recipe</i> to cancel it or click the close icon in the left upper corner.',
   },
 ]);
 

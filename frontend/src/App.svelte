@@ -39,7 +39,6 @@
 
   // Run reactive everytime when store images change
   $: {
-    console.log($currRecipeStep);
     intentName = null;
     setActiveImage({ obj: $images, key: 'active', value: true });
   }

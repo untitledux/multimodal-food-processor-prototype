@@ -95,6 +95,14 @@
             voice: true,
           });
           break;
+        case 'RequestIngredients':
+          overlayFunctions.requestIngredients({
+            screenId: id,
+            sessionId,
+            slots,
+            voice: true,
+          });
+          break;
         case 'RepeatExplanation':
           overlayFunctions.repeatExplanation({
             screenId: id,

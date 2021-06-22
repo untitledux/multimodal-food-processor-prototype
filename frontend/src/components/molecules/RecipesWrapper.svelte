@@ -88,6 +88,11 @@
         text: `The cooking time is ${$currRecipe.overview[0].TTSDuration}`,
       });
     },
+    requestIngredients({ screenId, actionId, voice, slots, sessionId }) {
+      dispatch('TTS', {
+        text: `${$currRecipe.overview[0].TTSIngredients}`,
+      });
+    },
     cancelRecipe({ screenId, actionId, voice, slots, sessionId }) {
       if (voice) {
         let intentFilter;

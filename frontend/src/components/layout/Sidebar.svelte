@@ -52,8 +52,8 @@
       <div class="header">Research Recommendations</div>
       <div class="text">
         Browse through some of the insights we gathered during our research. You
-        can click on each Insight to go to the corresponding screen and try it
-        out there.
+        can click on each Insight to go to the corresponding screen and give it
+        a try!
       </div>
     </div>
 
@@ -95,7 +95,7 @@
     height: var(--height);
     cursor: pointer;
     width: 50px;
-    background-color: #000;
+    background-color: #e2e2e2;
   }
 
   .spech-recommendition {
