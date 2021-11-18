@@ -20,7 +20,9 @@
     <li><a href="#production">Production</a></li>
     <li><a href="#data">Data for Spoken Language Understanding</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#ecrommendations">Recommendations</a></li>
+    <li><a href="#recommendations">Recommendations</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#citation">Citation</a></li>
   </ol>
 </details>
 
@@ -47,7 +49,7 @@ This prototype is meant to run locally or on a server like AWS. To run it locall
 _Disclaimer:_
 If you use the code or dataset please cite our work:
 
-> VoiceCookingAssistant. 2021. Audio-Visual-Cooking-Assistant. https://github.com/VoiceCookingAssistant/Audio-Visual-Cooking-Assistant
+> <a href="#citation">Citation</a>
 
 ### Built With
 
@@ -175,3 +177,17 @@ This prototype was tested in the Browser <a href="https://www.google.com/chrome/
 ## License
 
 Distributed under the Apache 2.0 License. See `LICENSE` for more information. <br />
+
+## Citation
+If you use or build on our work, please cite our paper related to this project: 
+
+```bib
+@inproceedings { ,
+	title = {Audio-Visual Recipe Guidance for Smart Kitchen Devices},
+	year = 2021,
+	conference = {4th International Conference on Natural Language and Speech Processing (ICNLSP 2021)},
+	month = 11,
+	author = {Kendrick, Caroline and Frohnmaier, Mariano and Georges, Munir},
+}
+```
+
